@@ -1,0 +1,8 @@
+set line /dev/tty1
+set speed 1200
+set esc 29
+set file type bin
+set file name lit
+set retry 90
+set prompt MINIX kermit> 
+connect

@@ -1,0 +1,24 @@
+	<space>	\(en Display next page
+	<return>	\(en Display next line
+	CTRL-B	\(en Go backward half a screenful
+	CTRL-D	\(en Go forward half a screenful
+	CTRL-L	\(en Redisplay the screen
+	#<space>	\(en Go forward # lines
+	=	\(en Print current line number
+	.	\(en Repeat previous command
+	'	\(en (single quote) Go back to start of last search
+	!	\(en Escape to a shell
+	#/<expr>	\(en Go to #-th occurrence of <expr>
+	:f	\(en Display current file name and line number
+	#:n	\(en Skip forward # files
+	#:p	\(en Skip backward # files
+	b	\(en Go backward half a screenful
+	d	\(en Go forward half a screenful
+	#f	\(en Skip # screenfuls
+	h	\(en Display \fI/usr/lib/more.help\fR
+	#n	\(en Go to #-th occurence of last <expr>
+	q	\(en Quit \fImore\fR
+	Q	\(en Quit \fImore\fR
+	#s	\(en Skip # lines
+	v	\(en Try to execute \fI/usr/bin/vi\fR
+	#z	\(en Go forward # lines and set screen size to #
