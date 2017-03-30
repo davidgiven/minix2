@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+template=$1
+shift
+
+mnt=mnt
+mkdir -p $mnt
+zcat $template > floppy.img
+sudo mount floppy.img $mnt
+trap "sudo umount $mnt" EXIT
+
+while [ "$1" != "" ]; do
+    mf=$1
+    echo "Running manifest $mf"
+    shift
+
+    (cd $mnt && sudo sh -c "set -e && . ../mkmanifest.sh && . ../$mf")
+done

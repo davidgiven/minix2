@@ -1,0 +1,51 @@
+# Describes the layout of the root floppy.
+
+copyfile .ellepro.b1
+copyfile .exrc
+copyfile .profile
+copyfile bin/M
+ln bin/M bin/U
+copyfile bin/[
+copyfile bin/cat
+copyfile bin/date
+ln bin/[ bin/echo
+ln bin/[ bin/expr
+ln bin/[ bin/false
+copyfile bin/fsck
+copyfile bin/halt
+copyfile bin/loadkeys
+copyfile bin/mount
+copyfile bin/printroot
+copyfile bin/pwd
+copyfile bin/readclock
+ln bin/halt bin/reboot
+copyfile bin/sh
+copyfile bin/sync
+ln bin/[ bin/test
+ln bin/[ bin/true
+copyfile bin/umount
+copyfile bin/intr
+ln bin/[ bin/cd
+ln bin/[ bin/command
+ln bin/[ bin/getopts
+ln bin/[ bin/read
+ln bin/[ bin/umask
+ln bin/[ bin/wait
+copyfile etc/fstab
+copyfile etc/group
+copyfile etc/passwd
+copyfile etc/profile
+copyfile etc/protocols
+copyfile etc/rc
+copyfile etc/services
+copyfile etc/shadow
+copyfile etc/termcap
+copyfile etc/ttytab
+copyfile etc/inet.conf
+copyfile etc/hostname.file
+copyfile etc/motd
+copyfile etc/mtab
+copyfile etc/utmp
+copyfile etc/issue
+copyfile minix/2.0.4
+copyfile .ashrc
