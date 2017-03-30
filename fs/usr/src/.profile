@@ -1,7 +1,7 @@
 # Login shell profile.
 
 # Erase character, erase line, and interrupt keys.
-stty sane erase '^H' kill '^U' intr '^?'
+stty sane erase '^H' kill '^U' intr '^C'
 
 # Check terminal type.
 case $TERM in

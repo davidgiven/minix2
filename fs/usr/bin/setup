@@ -84,7 +84,7 @@ esac
 # Must be in / or we can't mount or umount.
 case "`pwd`" in
 /?*)
-    echo "Please type 'cd /' first, you are locking up `pwd`" >&2	
+    echo "Please type 'cd /' first, you are locking up `pwd`" >&2
     exit 1
 esac
 case "$0" in
@@ -128,7 +128,7 @@ This is the Minix installation script.
 Note 1: If the screen blanks suddenly then hit F3 to select \"software
 	scrolling\".
 
-Note 2: If things go wrong then hit DEL and start over.
+Note 2: If things go wrong then hit ^C and start over.
 
 Note 3: The installation procedure is described in the manual page
 	usage(8).  It will be hard without it.
@@ -238,7 +238,7 @@ The following subpartitions are about to be created on /dev/$primary:
     Swap subpartition:	/dev/$swap	$swapsize kb
     /usr subpartition:	/dev/$usr	rest of $primary
 
-Hit return if everything looks fine, or hit DEL to bail out if you want to
+Hit return if everything looks fine, or hit ^C to bail out if you want to
 think it over.  The next step will destroy /dev/$primary.
 :"
 read ret
@@ -266,7 +266,7 @@ Migrating from floppy to disk...
 
 mkfs /dev/$usr
 echo "\
-Scanning /dev/$usr for bad blocks.  (Hit DEL to stop the scan if are
+Scanning /dev/$usr for bad blocks.  (Hit ^C to stop the scan if are
 absolutely sure that there can not be any bad blocks.  Otherwise just wait.)"
 trap ': nothing' 2
 readall -b /dev/$usr | sh
