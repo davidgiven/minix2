@@ -1,3 +1,9 @@
+mkdir dev fd0 fd1 mnt root tmp
+mkdir -p usr/tmp
+mkdir -p usr/preserve
+mkdir -p usr/spool/lpd
+mkdir -p usr/spool/at/past
+mkdir -p usr/run
 mknod dev/ram b 0x1 0x0
 mknod dev/fd0 b 0x2 0x0
 mknod dev/fd1 b 0x2 0x1
