@@ -1,7 +1,7 @@
 #!/bin/sh
 MOUNTPOINT=mnt
 mkdir -p $MOUNTPOINT
-zcat hd.img.gz > hd.img
+zcat images/hd-64MB.img.gz > hd.img
 sudo mount hd.img $MOUNTPOINT -o loop,offset=512
 sudo rsync -aH --inplace --whole-file --chown=0:0 fs/. $MOUNTPOINT/
 sudo find $MOUNTPOINT -type l -execdir sh -c 'ln -f "$(readlink -m "$0")" "$0"' {} \;
