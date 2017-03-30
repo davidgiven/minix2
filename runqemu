@@ -1,0 +1,5 @@
+#!/bin/sh
+qemu-system-i386 \
+    -drive file=hd.img,if=ide \
+    -m 64 \
+    -boot c

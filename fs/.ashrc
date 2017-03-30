@@ -1,0 +1,2 @@
+# Share the .ashrc of bin.
+test -f /usr/src/.ashrc && . /usr/src/.ashrc
