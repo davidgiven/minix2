@@ -4,3 +4,4 @@
 include _core.manifest
 mkdir -p usr/tmp usr/preserve usr/spool/lpd usr/spool/at/past usr/run
 include _everything.manifest
+echo 'console minix "sh /etc/pack.rc"' > etc/ttytab

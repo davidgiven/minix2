@@ -1,0 +1,8 @@
+# Init script when running the build pack.
+
+echo "Running the build pack custom console. You are logged in as root."
+echo "Do ^D to shut down cleanly."
+. /.profile
+cd /usr/src
+sh -
+shutdown -h now
