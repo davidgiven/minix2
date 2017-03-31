@@ -62,8 +62,9 @@ This will rebuild all the installation images from the files in `fs`.
     about 3MB of RAM you should mount them directly; at the boot monitor prompt.
     hit ESC, then type `rootdev=fd0`, then `boot`.
 
-  * `hd-64MB.img.gz`: exactly the same content as above, but in a bootable hard
-    disk image. Use this if you want to run Minix in a virtual machine.
+  * `hd-64MB.img.gz`: is a bootable hard drive image containing absolutely
+    everything; compilers, games, all the source code, the lot. Don't be put
+    off by the size. Use this if you want to run Minix in a virtual machine.
 
   * `root-720kB.img.gz`, `usr-720kB.img.gz`: split root and usr floppy disk
     images. A 720kB floppy isn't big enough for the combined disk, so you need
