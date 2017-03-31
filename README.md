@@ -26,6 +26,12 @@ completely self-hosted --- you can hack Minix on Minix.
 This makes it both interesting simply as a work of art, but also quite
 useful when retrocomputing.
 
+## I don't care about instructions, I just want something I can run!
+
+Go to the [release page](https://github.com/davidgiven/minix2/releases/latest);
+download one of the `img.gz` files; decompress it and write it to the
+appropriate media; then boot it in something.
+
 ## What's here?
 
 What you will find here is the contents of the last Minix 2 release, 2.0.4,
@@ -54,6 +60,8 @@ Do:
     $ ./mkall
 
 This will rebuild all the installation images from the files in `fs`.
+(Alternatively, you can download these from the
+[release page](https://github.com/davidgiven/minix2/releases/latest).)
 
   * `combo-1440kB.img.gz`, `combo-1200kB.img.gz`: combined root/usr floppy
     disk images. These contain a single filesystem with no division into root
