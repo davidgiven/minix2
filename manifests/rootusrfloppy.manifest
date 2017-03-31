@@ -1,0 +1,6 @@
+# Generates a combo disk, with both root and usr in the same partition.
+# be loaded into a ramdisk or mounted directly.
+
+include _core.manifest
+include _root.manifest
+include _usr.manifest

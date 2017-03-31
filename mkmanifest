@@ -2,19 +2,44 @@
 
 set -e
 
-template=$1
-shift
+options=$(getopt -s sh -n $0 t:o: "$@")
+if [ $? -ne 0 ]; then
+    echo >&2 "Usage: $0 [-t template] [-o output] manifests..."
+	exit 1
+fi
+
+template=
+output=output.img
+for option in $options; do
+    case "$option" in
+        -t) shift; template=$1; shift;;
+        -o) shift; output=$1; shift;;
+        --) break;;
+    esac
+done
+manifests="$@"
+
+if [ "$template" = "" ]; then
+    echo >&2 "$0: you have to supply a template file (look in 'images')"
+    exit 1
+fi
+if [ "$manifests" = "" ]; then
+    echo >&2 "$0: you have to supply at least one manifest (look in 'manifests')"
+    exit 1
+fi
+
+echo "Template file: $template"
+echo "Output image:  $output"
+echo "Manifests:     $manifests"
 
 mnt=mnt
 mkdir -p $mnt
-zcat $template > floppy.img
-sudo mount floppy.img $mnt
+zcat $template > $output
+sudo mount $output $mnt -o loop 2>/dev/null || sudo mount $output $mnt -o loop,offset=512
 trap "sudo umount $mnt" EXIT
 
-while [ "$1" != "" ]; do
-    mf=$1
+for mf in $manifests; do
     echo "Running manifest $mf"
-    shift
 
     (cd $mnt && sudo sh -c "set -e && . ../mkmanifest.sh && . ../$mf")
 done

@@ -1,0 +1,6 @@
+# Creates a build pack, consisting of everything in fs. Use an hd template for
+# this.
+
+include _core.manifest
+mkdir -p usr/tmp usr/preserve usr/spool/lpd usr/spool/at/past usr/run
+include _everything.manifest
