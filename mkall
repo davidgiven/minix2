@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+./mkmanifest -t images/fd-1440kB.img.gz -o combo-1440kB.img manifests/rootusrfloppy.manifest
+gzip -9f combo-1440kB.img
+./mkmanifest -t images/fd-1200kB.img.gz -o combo-1200kB.img manifests/rootusrfloppy.manifest
+gzip -9f combo-1200kB.img
+./mkmanifest -t images/fd-720kB.img.gz -o root-720kB.img manifests/rootfloppy.manifest
+gzip -9f root-720kB.img
+./mkmanifest -t images/fd-720kB.img.gz -o usr-720kB.img manifests/usrfloppy.manifest
+gzip -9f usr-720kB.img
+./mkmanifest -t images/hd-64MB.img.gz -o hd-64MB.img manifests/hd.manifest
+gzip -9f hd-64MB.img
