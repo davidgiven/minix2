@@ -45,41 +45,105 @@ with as little as 1MB of RAM, which is the main case I'm interested in.
 
 ## Instructions
 
-You will need a Linux machine and `qemu-system-i386`.
+You will need a Linux machine and `qemu-system-i386` and `rsync`.
+
+### Building and booting
+
+Do:
+
+    $ ./mkall
+
+This will rebuild all the installation images from the files in `fs`.
+
+  * `combo-1440kB.img.gz`, `combo-1200kB.img.gz`: combined root/usr floppy
+    disk images. These contain a single filesystem with no division into root
+    and usr. You can boot these. By default, the disk image will be loaded
+    into a ramdisk to free up the floppy disk drive, but if you have less than
+    about 3MB of RAM you should mount them directly; at the boot monitor prompt.
+    hit ESC, then type `rootdev=fd0`, then `boot`.
+
+  * `hd-64MB.img.gz`: exactly the same content as above, but in a bootable hard
+    disk image. Use this if you want to run Minix in a virtual machine.
+
+  * `root-720kB.img.gz`, `usr-720kB.img.gz`: split root and usr floppy disk
+    images. A 720kB floppy isn't big enough for the combined disk, so you need
+    to boot the root disk, let it load itself into a ramdisk, and then it'll
+    prompt you to replace the floppy with the usr image. It'll ask for a device;
+    you want `/dev/fd0`.
+
+### Installing onto a hard drive
+
+Once you have a floppy based system booted, you want to copy Minix onto your
+computer's hard drive.
+
+The detailed instructions are long and complicated, but the tl;dr version is
+to log in as root, and then:
+
+    $ part
+
+...is the partition editor; the Minix partition type is 81. If you have less
+than 4MB RAM, create a swap partition (of about 4MB). You'll probably want to
+reboot (Minix sometimes forgets to reload the partition table). I'm going to
+assume you have the swap in `/dev/c0d0p0` and your filesystem in
+`/dev/c0d0p1`. Don't make your filesystem too big; 64MB is probably as large
+as you want.
+
+To mount the swap:
+
+    # mkswap /dev/c0d0p0
+    # mount -s /dev/c0d0p0
+
+To create the filesystem and copy all the data:
+
+    # mkfs /dev/c0d0p1
+    # mount /dev/c0d0p1 /mnt
+    # cpdir -vx / /mnt/
+    # cpdir -vx /usr/ /mnt/usr/   # only if you're using the usr-720kB floppy
+    # echo "root=c0d0p1" > /mnt/etc/fstab
+    # echo "swap=c0d0p0" >> /mnt/etc/fstab   # vi is also available
+    # umount /dev/c0d0p1   # note that you use a device name here, not a path
+
+To make the hard drive bootable:
+
+    # installboot -m /dev/c0d0 /usr/mdec/masterboot
+    # installboot -d /dev/c0d0p1 /usr/mdec/bootblock boot
+    # edparams /dev/c0d0p1
+    c0d0p1> rootdev=c0d0p1
+    c0d0p1> save
+    c0d0p1> exit
+    # shutdown -h now
+
+...then reboot. Hopefully your new system will boot.
+
+## Hacking it
+
+If you just want to fiddle with it, or do builds, then this command:
 
     $ ./pack
 
-...will take the contents of the `fs` directory and turn it into a 64MB hard
-drive image called `hd.img`. **Read the script first.** It's crudely hacked
-together and does stuff as root. Because we can't store stuff like device
-nodes and special permission information in a VCS, there's also a script
-`specials.sh` which fixes these up. `pack` also converts symlinks into
-hardlinks (Minix 2 doesn't support symlinks).
-
-The file system image is based on `hd.img.gz`, which is a 64MB empty
-filesystem containing only the boot loader, which can only be installed from
-inside Minix itself.
-
-Once that finishes, do:
+...will create an `hd.img` file, similar to the `hd-64MB.img.gz` one above,
+It's also lightly massaged for use as a build box, so when it boots it'll
+take you straight to a shell, etc. This then allows you to then do:
 
     $ ./runqemu
 
 That will run QEMU and you should see Minix boot. It'll take about a second.
 
-(There will eventually be a script to extract the contents of the file
+(TODO: There will eventually be a script to extract the contents of the file
 system again, but that's not done yet.)
 
 ## References
 
-    * [The 'official' (it's been abandoned for years) Minix 2 distribution
-    page.](https://minix1.woodhull.com/)
+  * [The 'official' Minix 2 distribution
+    page](https://minix1.woodhull.com/) (it's been
+    abandoned for years).
 
-    * [The Design and Implementation of Operating Systems (second
+  * [The Design and Implementation of Operating Systems (second
     edition)](https://www.amazon.co.uk/Operating-Systems-Implementation-Tanenbaum-1997-01-15/dp/B019NDOVWC/ref=sr_1_1)
     is the book which describes Minix 2. Despite being out of print, it's
     still available from Amazon for terrifying prices.
 
-    * [Minix 3](http://www.minix3.org/) is the vastly updated and quite
+  * [Minix 3](http://www.minix3.org/) is the vastly updated and quite
     usable successor to Minix 2... but it won't boot on XT computers any
     more.
 
