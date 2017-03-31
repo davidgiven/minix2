@@ -47,6 +47,8 @@ copyfile usr/bin/vol
 copyfile usr/bin/zcat
 ln usr/bin/zcat usr/bin/compress
 ln usr/bin/zcat usr/bin/uncompress
+copyfile usr/bin/elvis
+ln usr/bin/elvis usr/bin/vi
 copyfile usr/etc/rc
 copyfile usr/lib/keymaps/french.map
 copyfile usr/lib/keymaps/german.map
