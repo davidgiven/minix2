@@ -12,6 +12,9 @@ rsync -av \
     --no-specials \
     --exclude 'dev' \
     --exclude 'etc/ttytab' \
+    --exclude 'etc/mtab' \
+    --exclude 'etc/utmp' \
+    --exclude 'usr/adm' \
     --exclude 'boot' \
     mnt/ \
     fs/ \
