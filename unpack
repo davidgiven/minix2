@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+
+sudo mount hd.img mnt -o loop,offset=512
+linkfile=/tmp/$$.linkfile
+trap "sudo umount mnt; rm -f $linkfile" EXIT
+
+rsync -av \
+    --hard-links \
+    --delete \
+    --whole-file \
+    --no-specials \
+    --exclude 'dev' \
+    --exclude 'etc/ttytab' \
+    --exclude 'boot' \
+    mnt/ \
+    fs/ \
+    > $linkfile
+
+awk '/ => / { print "ln -sfr ./" $3 " " $1 }' $linkfile | (cd fs && sh)

@@ -5,6 +5,7 @@
 This is a very quick-and-dirty distribution of the old Minix 2 operating
 system by Andrew Tanenbaum. It's not official in any way.
 
+
 ### What is Minix 2?
 
 Minix 2 is a pedagogical operating system designed for teaching an OS
@@ -26,11 +27,13 @@ completely self-hosted --- you can hack Minix on Minix.
 This makes it both interesting simply as a work of art, but also quite
 useful when retrocomputing.
 
+
 ## I don't care about instructions, I just want something I can run!
 
 Go to the [release page](https://github.com/davidgiven/minix2/releases/latest);
 download one of the `img.gz` files; decompress it and write it to the
 appropriate media; then boot it in something.
+
 
 ## What's here?
 
@@ -49,9 +52,11 @@ Note: this is Minix i86. The largest binaries can get is 64kB+64kB. This is
 restrictive compared to Minix i386, but it'll also build and run on machines
 with as little as 1MB of RAM, which is the main case I'm interested in.
 
+
 ## Instructions
 
 You will need a Linux machine and `qemu-system-i386` and `rsync`.
+
 
 ### Building and booting
 
@@ -79,6 +84,7 @@ This will rebuild all the installation images from the files in `fs`.
     to boot the root disk, let it load itself into a ramdisk, and then it'll
     prompt you to replace the floppy with the usr image. It'll ask for a device;
     you want `/dev/fd0`.
+
 
 ### Installing onto a hard drive
 
@@ -124,6 +130,7 @@ To make the hard drive bootable:
 
 ...then reboot. Hopefully your new system will boot.
 
+
 ## Hacking it
 
 If you just want to fiddle with it, or do builds, then this command:
@@ -138,8 +145,15 @@ take you straight to a shell, etc. This then allows you to then do:
 
 That will run QEMU and you should see Minix boot. It'll take about a second.
 
-(TODO: There will eventually be a script to extract the contents of the file
-system again, but that's not done yet.)
+Once you've finished working with Minix, exit the shell with ^D. It'll shut
+down cleanly. Then you kill the qemu window (sorry, Minix doesn't know how to
+tell qemu to shut down!) and then you can do:
+
+    $ ./unpack
+
+...and your changes will be copied out of the image into the `fs` directory
+where you and the VCS can see them.
+
 
 ## References
 
@@ -155,6 +169,7 @@ system again, but that's not done yet.)
   * [Minix 3](http://www.minix3.org/) is the vastly updated and quite
     usable successor to Minix 2... but it won't boot on XT computers any
     more.
+
 
 ## License
 
