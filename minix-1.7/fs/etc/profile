@@ -1,0 +1,3 @@
+# Set timezone for Middle European Time.
+
+TZ='MET-1MET DST,M3.5.0/2,M9.5.0/3'	export TZ
