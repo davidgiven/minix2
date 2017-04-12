@@ -1,0 +1,17 @@
+.CD "tr \(en translate character codes"
+.SX "tr\fR [\fB\(encds\fR]\fR [\fIstring1\fR] [\fIstring2\fR]"
+.FL "\(enc" "Complement the set of characters in \fIstring1\fR"
+.FL "\(end" "Delete all characters specified in \fIstring1\fR"
+.FL "\(ens" "Squeeze all runs of characters in \fIstring1\fR to one character"
+.EX "tr \(fm[A\(enZ]\(fm \(fm[a\(enz]\(fm <x >y~~~~~" "Convert upper case to lower case"
+.EX "tr \(end \(fm0123456789\(fm <f1 >f2~~" "Delete all digits from \fIf1\fR"
+.PP
+.I Tr
+performs simple character translation.
+When no flag is specified, each character in 
+.I string1
+is mapped onto the corresponding character in
+.I string2 .
+
+
+

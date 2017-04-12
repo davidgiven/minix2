@@ -1,0 +1,9 @@
+.CD "pwd \(en print working directory"
+.SX "pwd"
+.FL "\fR(none)"
+.EY "pwd~~~~~" "Print the name of the working directory"
+.PP
+The full path name of the current working directory is printed.
+
+
+

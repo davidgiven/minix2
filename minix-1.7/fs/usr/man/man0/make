@@ -1,0 +1,58 @@
+.CD "make \(en a program for maintaining large programs"
+.SX "make\fR [\fB\(enf \fIfile\fR]\fR [\fB\(eniknpqrst\fR] [\fIoption\fR] ... [\fItarget\fR]
+.FL "\(enf" "Use \fIfile\fP as the makefile"
+.FL "\(eni" "Ignore status returned by commands"
+.FL "\(enk" "On error, skip to next command"
+.FL "\(enn" "Report, but do not execute"
+.FL "\(enp" "Print macros and targets"
+.FL "\(enq" "Question up-to-dateness of target"
+.FL "\(enr" "Rule inhibit; do not use default rules"
+.FL "\(ens" "Silent mode"
+.FL "\(ent" "Touch files instead of making them"
+.EX "make kernel" "Make \fIkernel\fP up to date"
+.EX "make \(enn \(enf mfile" "Tell what needs to be done"
+.PP
+.I Make
+is a program that is normally used for developing large programs consisting of
+multiple files.
+It keeps track of which object files depend on which source and header files.
+When called, it does the minimum amount of recompilation to bring the target
+file up to date.
+.PP
+The file dependencies are expected in 
+.I makefile
+or
+.I Makefile ,
+unless another file is specified with \fB\(enf\fR.
+.I Make
+has some default rules built in, for example, it knows how to make 
+.I .s
+files
+from 
+.I .c
+files.
+Here is a sample 
+.I makefile .
+.HS
+.nf
+.ta 0.25i 1.0i 3.0i
+	d=/user/ast		# \fId\fP is a macro
+	program:	head.s tail.s	# \fIprogram\fR depends on these
+		cc \(eno program head.s tail.s	# tells how to make \fIprogram\fP 
+		echo Program done.	# announce completion
+	head.s:	$d/def.h head.c	# \fIhead.s\fP depends on these
+.br
+	tail.s:	$d/var.h tail.c	# \fItail.s\fP depends on these
+.HS
+.fi
+A complete description of \fImake\fR would require too much space here.
+Many books on
+.UX
+discuss
+.I make .
+Study the numerous \fIMakefiles\fR in the 
+.MX
+source tree for examples.
+
+
+

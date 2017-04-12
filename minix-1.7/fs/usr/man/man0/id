@@ -1,0 +1,12 @@
+.CD "id \(en print the uid and gid"
+.SX "id"
+.FL "\fR(none)"
+.EY "id" "Print the uid and gid"
+.PP
+\fIId\fR prints the current uid and gid, both numerically and symbolically.
+If the effective uid and gid are different from the real ones, all of them
+are printed.
+
+
+
+.SP 0.4

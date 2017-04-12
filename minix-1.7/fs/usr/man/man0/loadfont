@@ -1,0 +1,20 @@
+.CD "loadfont \(en load a font into the video card"
+.SX "loadfont \fIfontfile"
+.FL "\fR(none)"
+.EY "loadfont alt-lat-2.f16" "Loads an alternate ISO 8859-2 (Latin-2) 8x16 font"
+.PP
+.I Loadfont
+loads a custom font into the video card (EGA or VGA).  The font character
+size has to be 8x16 pixels and the font file must contain 256 characters for
+a total size of 4 kilobytes.
+.PP
+.I Loadfont
+together with
+.I loadkeys
+allow the console and keyboard to be customized to national conventions.
+.PP
+If it exists, the file
+.I /etc/font
+is loaded as a custom font by
+.I /etc/rc
+at boot time.

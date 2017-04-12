@@ -1,0 +1,18 @@
+.CD "spell \(en print all words in a file not present in the dictionary"
+.SX "spell \fIfile"
+.FL "\fR(none)"
+.EY "spell document" "Print the spelling errors on \fIstdout\fR"
+.PP
+\fISpell\fR is the 
+.MX
+spelling checker.  
+It is actually a short shell script.
+First, the program \fIprep\fR strips off the \fIroff\fR, 
+\fInroff\fR, and \fItroff\fR control lines,
+and the punctuation, and lists each word on a separate line.  These words are
+then sorted.  The resulting output is then compared to the dictionary.  Words
+present in the file but not present in the dictionary are listed.  The
+dictionary must be located in \fI/usr/lib/dict/words\fR.
+
+
+

@@ -1,0 +1,16 @@
+.CD "chown \(en change owner"
+.SX "chown [\fB\(enR\fR] \fIowner\fR[:\fIgroup\fR] \fIfile\fR ..."
+.FL "\(enR" "Change directory hierarchies"
+.EX "chown ast file1 file2" "Make \fIast\fR the owner of the files"
+.EX "chown \(enR ast:other dir" "Change the owner and group of all files in dir"
+.PP
+The owner field (and optionally group field) of the named files is changed
+to
+.I owner 
+(i.e., login name specified) and
+.I group .
+Alternatively, a decimal uid(gid) may be specified instead of a user name.
+Only the superuser may execute this command.
+
+
+

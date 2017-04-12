@@ -1,0 +1,16 @@
+.CD "readfs \(en read a \s-2MINIX\s0 file system"
+.SX "readfs\fR [\fB\(enil\fR] \fIblock_special\fR [\fIdir\fR]"
+.FL "\(eni" "Give information about the file, but do not extract files"
+.FL "\(enl" "List the files extracted on standard output"
+.EY "readfs \(enl /dev/fd0" "List contents of diskette"
+.PP
+\fIReadfs\fR reads a diskette containing a 
+.MX
+file system.  It can
+extract all the files from it, give a listing of them, or both.  The files
+extracted can be put in a user-specified directory (default: current
+directory).  If subdirectories are needed, they will be created automatically.
+
+
+
+.SP 1

@@ -1,0 +1,36 @@
+.CD "test, [ \(en test for a condition"
+.SX "test \fIexpr"
+.SX "[ \fIexpr \fB]"
+.FL "\fR(none)"
+.EY "test \(enr file" "See if file is readable"
+.PP
+\fITest\fR checks to see if files exist, are readable, etc. and returns
+an exit status of zero if true and nonzero if false.  The legal operators are
+.sp
+.nf
+.ta 0.5i 1.5i
+	\(enr file	true if the file is readable
+	\(enw file	true if the file is writable
+	\(enx file	true if the file is executable
+	\(enf file	true if the file is not a directory
+	\(end file	true if the file is a directory
+	\(ens file	true if the file exists and has a size > 0
+	\(ent fd	true if file descriptor fd (default 1) is a terminal
+	\(enz s	true if the string s has zero length
+	\(enn s	true if the string s has nonzero length
+	s1 = s2	true if the strings s1 and s2 are identical
+	s1 != s2	true if the strings s1 and s2 are different
+	m \(eneq m	true if the integers m and n are numerically equal
+.fi
+
+The operators \fB\(engt\fR, \fB\(enge\fR, \fB\(enne\fR, \fB\(enle\fR, and
+\fB\(enlt\fR may be used as well.
+These operands may be combined with \fB\(ena\fR (Boolean and), 
+\fB\(eno\fR (Boolean or), !
+(negation).  
+The priority of \fB\(ena\fR is higher than that of \fB\(eno\fR.  
+Parentheses are permitted, but must be escaped to keep the shell from trying 
+to interpret them.
+
+
+

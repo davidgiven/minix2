@@ -1,0 +1,13 @@
+.CD "expr \(en evaluate experession"
+.SX "expr \fIarg ..."
+.FL "\fR(none)"
+.EY "x=\`expr \$x + 1\`" "Add 1 to shell variable x"
+.PP
+\fIExpr\fR computes the value of its argument and writes the result on
+standard output.  The valid operators, in order of increasing precedence,
+are listed below.  Operators grouped by {...} have the same precedence.
+The operators are: |, &, {<, <=, ==, !=, >=, >}, {+, \(en}, *, /, %, and :.
+Parentheses are permitted.
+
+
+

@@ -1,0 +1,15 @@
+.CD "mount \(en mount a file system"
+.SX "mount \fIspecial \fIfile\fR [\fB\(enr\fR]"
+.FL "\(enr" "File system is mounted read-only"
+.EY "mount /dev/fd1 /user" "Mount diskette 1 on \fI/user\fP"
+.PP
+The file system contained on the special file is mounted on \fIfile\fP.
+In the example above, the root directory of the file system in drive 1
+can be accessed as
+.DI /user
+after the mount.
+When the file system is no longer needed, it must be unmounted before being
+removed from the drive.
+
+
+

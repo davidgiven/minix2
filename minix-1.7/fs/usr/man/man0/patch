@@ -1,0 +1,224 @@
+.CD "patch \(en patches up a file from the original and a diff"
+.SX "patch\fR [\fB\(enNRbcdef\&lnop\fR]\fR [\fB\(enF\fIn\fR] [\fB\(enD \fIlabel\fR] [\fIfile \fR[\fIdifflist\fR]]"
+.FL "\(enD" "Mark changes with   #ifdef...#endif   next arg gives label"
+.FL "\(enF" "Sets the maximum fuzz factor to \fIn\fR"
+.FL "\(enN" "Ignore patches that are reversed or already applied"
+.FL "\(enR" "Reverse the patches"
+.FL "\(enb" "Next argument is backup extension, instead of using a tilde (\(ap)"
+.FL "\(enc" "Interpret the patch file as a context diff"
+.FL "\(end" "Cd to the next arg (assumed a dir) before doing anything"
+.FL "\(ene" "Interpret the patch file as an ed script"
+.FL "\(enf" "Forces \fIpatch\fR to do its work without asking any questions"
+.FL "\(enl" "Do matching loosely (e.g., all white space is equivalent)"
+.FL "\(enn" "Interpret the patch file as a normal diff"
+.FL "\(eno" "Next argument is the output file name"
+.FL "\(enp" "Sets the pathname strip count"
+.EX "patch file difflist" "Fix up \fIfile\fR"
+.EX "patch <difflist" "Patch multiple files"
+.PP
+The
+.MX
+user community on USENET frequently makes improvements to the
+.MX
+software.
+The changes are distributed in the form of differences between the original
+file and the new one, made with \fIcdiff\fR.
+To update the original version (which you must have), use \fIpatch\fR.
+If the original file is called \fIprog.c\fR and the patch is called
+\fIprog.cdif\fR then you should type:
+.HS
+.Cx "patch  prog.c  prog.cdif"
+.HS
+In some cases, a large number of files in a single directory will be
+updated at once.
+In this case, the difference file may be the concatenation of many 
+individual difference files.
+The resulting file usually has a name like \fIdir.cdif\fR.
+To apply all the patches, type:
+.HS
+.Cx "patch  <dir.cdif"
+.HS
+.PP
+Patch will take a patch file containing any of the three forms of 
+difference listing produced by the diff program and apply those differences to 
+an original file, producing a patched version.  By default, the patched 
+version is put in place of the original, with the original file backed up to 
+the same name with a tilde appended, or as specified by the \fB\(enb\fR 
+flag.
+You may also specify where you want the output to go with a \fB\(eno\fR 
+flag.  If patchfile is omitted, or is a hyphen, the patch will be read from 
+standard input.
+.PP
+Upon startup, patch will attempt to determine the type of the diff 
+listing, unless over-ruled by a \fB\(enc\fR, \fB\(ene\fR, 
+or \fB\(enn\fR flag.  Context diffs and 
+normal diffs are applied by the patch program itself, while \fIed\fR diffs are 
+simply fed to the \fIed\fR editor via a pipe.
+.PP
+Patch will try to skip any leading garbage, apply the diff, and then skip 
+any trailing garbage. Thus you could feed an article or message containing a
+diff listing to patch and it should work.  If the entire diff is indented by a 
+consistent amount, this will be taken into account.
+.PP
+With context diffs, and to a lesser extent with normal diffs, patch can 
+detect when the line numbers mentioned in the patch are incorrect, and will 
+attempt to find the correct place to apply each hunk of the patch. As a first 
+guess, it takes the line number mentioned for the hunk, plus or minus any 
+offset used in applying the previous hunk.  If that is not the correct place, 
+patch will scan both forwards and backwards for a set of lines matching the 
+context given in the hunk.  First patch looks for a place where all lines of 
+the context match.  If no such place is found, and it is a context diff, and 
+the maximum fuzz factor is set to 1 or more, then another scan takes place 
+ignoring the first and last line of context.  If that fails, and the maximum 
+fuzz factor is set to 2 or more, the first two and last two lines of context 
+are ignored, and another scan is made.  (The default maximum fuzz factor is 
+2.)  If patch cannot find a place to install that hunk of the patch, it will 
+put the hunk out to a reject file, which normally is the name of the output 
+file plus \*(OQ#\*(CQ.  (Note that the rejected hunk will come out in 
+context diff form whether the input patch was a context diff or a normal diff. 
+If the input was a normal diff, many of the contexts will simply be null.)  
+The line numbers on the hunks in the reject file may be different than in the 
+patch file: they reflect the approximate location patch thinks the failed 
+hunks belong in the new file rather than the old one.
+.PP
+As each hunk is completed, you will be told whether the hunk succeeded or
+failed, and which line (in the new file) patch thought the hunk should go on.
+If this is different from the line number specified in the diff you will
+be told the offset.  A single large offset MAY be an indication that a hunk 
+was installed in the wrong place.  You will also be told if a fuzz factor was 
+used to make the match, in which case you should also be slightly suspicious.
+.PP
+If no original file is specified on the command line, patch will try to 
+figure out from the leading garbage what the name of the file to edit is.  In 
+the header of a context diff, the filename is found from lines beginning with 
+\*(OQ***\*(CQ  or  \*(OQ---\*(CQ , with the shortest name of an existing file winning.  Only 
+context diffs have lines like that, but if there is an \*(OQIndex:\*(CQ line in the 
+leading garbage, patch will try to use the filename from that line.  The 
+context diff header takes precedence over an Index line.  If no filename can 
+be intuited from the leading garbage, you will be asked for the name of the 
+file to patch.
+.PP
+(If the original file cannot be found, but a suitable SCCS or RCS file is
+handy, patch will attempt to get or check out the file.)
+.PP
+Additionally, if the leading garbage contains a \*(OQPrereq:\*(CQ line, patch 
+will take the first word from the prerequisites line (normally a version 
+number) and check the input file to see if that word can be found.  If not, 
+patch will ask for confirmation before proceeding.
+.PP
+If the patch file contains more than one patch, patch will try to apply 
+each of them as if they came from separate patch files.  This means, among 
+other things, that it is assumed that the name of the file to patch must be 
+determined for each diff listing, and that the garbage before each diff 
+listing will be examined for interesting things such as filenames and revision 
+level, as mentioned previously.  You can give flags (and another original 
+file name) for the second and subsequent patches by separating the 
+corresponding argument lists by a \*(OQ+\*(CQ.  (The argument list for a second or 
+subsequent patch may not specify a new patch file, however.)
+.PP
+Patch recognizes the following flages:
+.PP
+The \fB\(enb\fR\fR flag
+causes the next argument to be interpreted as the backup extension, to be 
+used in place of the tilde.
+.PP
+The \fB\(enB\fR flag
+causes the next argument to be interpreted as a prefix to the backup file 
+name.  If this argument is specified any argument from \fB\(enb\fR will be ignored.  
+This argument is an extension to Larry Wall's patch v2.0.1.4, patchlevel 8, 
+made by M. Greim (greim@sbsvax.uucp).
+.PP
+The \fB\(enc\fR flag forces patch to interpret the patch file as a context diff.
+.PP
+The \fB\(end\fR flag causes patch to 
+interpret the next argument as a directory, and \fRcd\fR to it 
+before doing anything else.
+.PP
+The \fB\(enD\fR flag causes patch to 
+use the \*(OQ#ifdef...#endif\*(CQ construct to mark changes.  The 
+argument following will be used as the differentiating symbol.  Note that, 
+unlike the C compiler, there must be a space between the -D and the argument.
+.PP
+The \fB\(ene\fR flag forces patch to interpret the patch file as an 
+\fIed\fR script.
+.PP
+The \fB\(enf\fR flag 
+forces patch to assume that the user knows exactly what he or she is 
+doing, and to not ask any questions.  It does not suppress commentary, 
+however.  Use \fB\(ens\fR for that.
+.PP
+The \fB\(enF\fIn\fR\fR flag  sets the maximum fuzz factor.  This flag only applies to context 
+diffs, and causes patch to ignore up to that many lines in looking for places 
+to install a hunk.  Note that a larger fuzz factor increases the odds of a 
+faulty patch.  The default fuzz factor is 2, and it may not be set to more 
+than the number of lines of context in the context diff, ordinarily 3.
+.PP
+The \fB\(enl\fR flag causes the pattern matching to 
+be done loosely, in case the tabs and 
+spaces have been munged in your input file.  Any sequence of whitespace in the 
+pattern line will match any sequence in the input file.  Normal characters 
+must still match exactly.  Each line of the context must still match a line in 
+the input file.
+.PP
+The \fB\(enn\fR flag forces patch to interpret the patch file as a normal diff.
+.PP
+The \fB\(enN\fR flag causes 
+patch to ignore patches that it thinks are reversed or already 
+applied.  See also \fB\(enR\fR.
+.PP
+The \fB\(eno\fR flag causes the next argument to be 
+interpreted as the output file name.
+.PP
+The \fB\(enp\fIn\fR flag sets the pathname strip count, 
+which controls how pathnames found 
+in the patch file are treated, in case the you keep your files in a different 
+directory than the person who sent out the patch.  The strip count specifies 
+how many slashes are to be stripped from the front of the pathname.  (Any 
+intervening directory names also go away.)  
+As a simple example, let us suppose that the
+filename in the patch file is \fI/u/howard/src/blurfl/blurfl.c\fR
+setting \fB\(enp\fR or \fB\(enp0\fR 
+gives the entire pathname unmodified, \fB\(enp1\fR gives
+\fIu/howard/src/blurfl/blurfl.c\fR
+without the leading slash, \fB\(enp\fR4 gives \fIblurfl/blurfl.c\fR
+and not specifying \fB\(enp\fR at all just gives
+you \fIblurfl.c\fR.  Whatever you end up 
+with is looked for either in the current directory, or the directory specified 
+by the \fB\(end\fR flag.
+.PP
+The \fB\(enr\fR flag causes the next argument to be 
+interpreted as the reject file name.
+.PP
+The \fB\(enR\fR flag tells patch that this 
+patch was created with the old and new files 
+swapped.  (That does happen occasionally, human nature being 
+what it is.)  Patch will attempt to swap each hunk around before applying it.  
+Rejects will come out in the swapped format.  The \fB\(enR\fR 
+flag will not work with \fIed\fR diff scripts because there is too little 
+information to reconstruct the reverse operation.
+.PP
+If the first hunk of a patch fails, patch will reverse the hunk to see if 
+it can be applied that way.  If it can, you will be asked if you want to have 
+the \fB\(enR\fR flag set.  
+If it cannot, the patch will continue to be applied 
+normally.  (Note: this method cannot detect a reversed patch if it is a normal 
+diff and if the first command is an append (i.e. it should have been a delete) 
+since appends always succeed, due to the fact that a null context will match 
+anywhere.  Luckily, most patches add or change lines rather than delete them, 
+so most reversed normal diffs will begin with a delete, which will fail, 
+triggering the heuristic.)
+.PP
+The \fB\(ens\fR flag makes patch do its work silently, unless an error occurs.
+.PP
+The \fB\(enS\fR flag causes patch to ignore this 
+patch from the patch file, but continue on 
+looking for the next patch in the file. Thus
+.HS
+.Cx "patch  \(enS  +  \(enS  +  <patchfile"
+.HS
+will ignore the first and second of three patches.
+.PP
+The \fB\(env\fRflag causes patch to print out its revision header and patch level.
+.PP
+The \fB\(enx\fInumber\fR flag  sets internal 
+debugging flags, and is of interest only to patch patchers.

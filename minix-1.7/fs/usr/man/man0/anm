@@ -1,0 +1,45 @@
+.CD "anm \(en print name list"
+.SX "anm \fR[\fB\(engnoprus\fR] \fIfile\fR ..."
+.FL "\(eng" "Global symbols only"
+.FL "\(enn" "Sort numerically"
+.FL "\(eno" "Prepend the filename to each line"
+.FL "\(enp" "No sorting\(emuse symbol table order"
+.FL "\(enr" "Sort in reverse order"
+.FL "\(enu" "List undefined symbols only"
+.FL "\(ens" "Sort in section order"
+.EY "anm  \(engn  test.o" "Print global symbols in numerical order"
+.PP
+.I Anm
+prints the name list (symbol table) of each ACK format object
+.I file
+in the argument list.
+If no file name is given, \fIa.out\fR is used.
+Each symbol name is preceded by its value, a section indicator
+and a type indicator.
+The section indicators are:
+.SP 0.7
+.HS
+.ta 0.25i 0.50i
+.nf
+	\fBU\fR	Undefined symbol
+	\fBA\fR	Absolute symbol
+	\fB\(en\fR	Other symbol
+.sp
+The type indicators are:
+.HS
+	\fBF\fR	Filename
+	\fBM\fR	Module name
+	\fBS\fR	Section name
+	\fBE\fR	External (global) symbol
+	\fB\(en\fR	Local symbol
+.fi
+.PP
+The output is sorted alphabetically, unless otherwise specified.
+Notice that \fIanm\fR can only be used on ACK format object files 
+(that is: \fI.o\fR and \fI.out\fR files). 
+If you want to get the name list of an executable program use 
+.I nm
+instead.
+
+
+

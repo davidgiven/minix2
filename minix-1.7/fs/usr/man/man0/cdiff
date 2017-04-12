@@ -1,0 +1,13 @@
+.CD "cdiff \(en context diff"
+.SX "cdiff\fR [\fB\(enc\fIn\fR] \fIoldfile \fInewfile"
+.FL "\(enc" "Provide \fIn\fR lines of context"
+.EX "cdiff old new >f" "Write context diff on \fIf\fR"
+.EX "cdiff \(enc1 old new >f" "Use only 1 line of context"
+.PP
+\fICdiff\fR produces a context diff by first running \fIdiff\fR and then 
+adding context.  
+Some update programs, like \fIpatch\fR, can use context diffs to update
+files, even in the presence of other, independent changes.
+
+
+

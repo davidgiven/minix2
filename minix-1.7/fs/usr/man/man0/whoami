@@ -1,0 +1,11 @@
+.CD "whoami \(en print current user name"
+.SX "whoami"
+.FL "\fR(none)"
+.EY "whoami" "Print user name"
+.PP
+In case you forget who you are logged in as, \fIwhoami\fR will tell you.  If
+you use \fIsu\fR to become somebody else, 
+\fIwhoami\fR will give the current effective user.
+
+
+

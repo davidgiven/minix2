@@ -1,0 +1,19 @@
+.CD "unshar \(en Remove files from a shell archive"
+.SX "unshar\fR [\fB\(enbtvx\fR] \fIsharfile \fImember ..."
+.FL "\(enb" "Unshar brutally, overwriting files if need be"
+.FL "\(ent" "Tell what is in the archive but do not extract"
+.FL "\(env" "Verbose mode"
+.FL "\(enx" "Extract only the members listed"
+.EX "unshar arch.sh" "Extract all members of the archive"
+.EX "unshar \(ent arch.sh" "List the contents of the archive"
+.EX "unshar \(enxf1 \(enxf2 arch.sh" "Extract \fIf1\fR and \fIf2\fR from \fIarch.sh\fR"
+.EX "uniq \(end inf outf" "Write duplicate lines to \fIoutf\fP"
+.PP
+.I Unshar
+extracts members of a shell archive, the same as \fIsh\fR, except much faster.
+It expects shell archives created with \fIshar.\fR
+It also has options to list the contents of a shell archive, and to selectively
+extract some members but not all.
+
+
+

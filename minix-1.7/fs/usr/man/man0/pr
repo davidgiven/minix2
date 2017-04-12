@@ -1,0 +1,21 @@
+.CD "pr \(en print a file"
+.SX "pr\fR [\fB\(enMfnt\fR]\fR [\fB\(enh \fIn\fR]  [\fB\(enl \fIn\fR]  [\fB\(enw \fIn\fR] [\fB\(en\fRcolumns\fR] [\fB+\fIpage\fR] [\fIfile\fR] ..."
+.FL "\(enM" "Use MINIX style line number"
+.FL "\(enf" "Do not fold long lines"
+.FL "\(enh" "Take next argument as page header"
+.FL "\(enl" "Sets page length in lines"
+.FL "\(enn" "Number the output lines"
+.FL "\(ent" "Do not print page header or trailer"
+.FL "\(enw" "Sets line length in characters"
+.EX "pr \(enw85 \(enl60 file" "Use 85 character line, 60 line page"
+.EX "pr \(en3 file" "List \fIfile\fP three columns to a page"
+.EX "pr +4 file" "Start printing with page 4"
+.PP
+.I Pr
+formats one or more files for printing.
+If no files are specified, \fIstdin\fR is printed.
+Options are provided for setting the width and height of the page, the
+number of columns to use (default 1), and the page to start with, among others.
+
+
+

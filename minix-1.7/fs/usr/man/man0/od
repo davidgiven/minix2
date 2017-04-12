@@ -1,0 +1,24 @@
+.CD "od \(en octal dump"
+.SX "od\fR [\fB\(enbcdhox\fR]\fR [\fIfile\fR] [ [\fB+\fR] \fIoffset\fR [\fB.\fR][\fBb\fR]\fR ]"
+.FL "\(enb" "Dump bytes in octal"
+.FL "\(enc" "Dump bytes as ASCII characters"
+.FL "\(end" "Dump words in decimal"
+.FL "\(enh" "Print addresses in hex (default is octal)"
+.FL "\(eno" "Dump words in octal (default)"
+.FL "\(env" "Verbose (list duplicate lines)"
+.FL "\(enx" "Dump words in hex"
+.EX "od \(enox file" "Dump \fIfile\fP in octal and hex"
+.EX "od \(end file +1000" "Dump \fIfile\fP starting at byte 01000"
+.EX "od \(enc file +10.b" "Dump \fIfile\fP starting at block 10"
+.PP
+.I Od
+dumps a file in one or more formats.
+If \fIfile\fP is missing, \fIstdin\fR is dumped.
+The \fIoffset\fP argument tells
+.I od
+to skip a certain number of bytes or blocks before starting.
+The offset is in octal bytes, unless it is followed by a 
+\*(OQ.\*(CQ for decimal or \fBb\fP for blocks or both.
+
+
+

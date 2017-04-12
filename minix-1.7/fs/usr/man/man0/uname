@@ -1,0 +1,24 @@
+.CD "uname, arch \(en system info"
+.SX "uname\fR [\fB\(ensnrvmpa\fR]"
+.SX "arch\fR [\fB\(ensnrvmpa\fR]"
+.FL "\(ens" "System name"
+.FL "\(enn" "Node/network name"
+.FL "\(enr" "Operating system release"
+.FL "\(env" "Operating system version"
+.FL "\(enm" "Machine type"
+.FL "\(enp" "Processor family"
+.FL "\(ena" "Short for \fB\(ensnrvm\fR"
+.EX "uname -n" "Print the name of the system"
+.EX "arch" "Print the name of the system architecture"
+.PP
+\fIUname\fP and \fIarch\fP give information about the system.  The options
+indicate which information strings must be printed.  These strings are always
+in the same order.  \fIUname\fP and \fIarch\fP only differ w.r.t. the default
+string to print, \fB\(ens\fP and \fB\(enp\fP respectively.
+.PP
+The strings are compiled into the commands except for the node name, it is
+obtained from the file \fI/etc/hostname.file\fP.  \fBUname \(enm\fP should
+return the actual machine type, not the same string as with \fB\(enp\fP.
+
+
+

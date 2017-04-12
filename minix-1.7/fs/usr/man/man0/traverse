@@ -1,0 +1,11 @@
+.CD "traverse \(en print directory tree under the named directory"
+.SX "traverse \fIdir"
+.FL "\fR(none)"
+.EY "traverse ." "Print tree starting at working dir"
+.PP
+\fITraverse\fR prints the tree structure starting at the named directory. 
+All the subdirectories are listed, with the depth shown by indentation.
+
+
+
+.SP 1

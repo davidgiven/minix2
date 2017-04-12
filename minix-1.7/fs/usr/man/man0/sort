@@ -1,0 +1,32 @@
+.CD "sort \(en sort a file of ASCII lines"
+.SX "sort\fR [\fB\(enbcdf\&imnru\fR]\fR [\fB\(ent\fIc\fR]  [\fB\(eno \fIname\fR] [\fB+\fIpos1\fR] [\fB\(en\fIpos2\fR] \fIfile\fR ..."
+.FL "\(enb" "Skip leading blanks when making comparisons"
+.FL "\(enc" "Check to see if a file is sorted"
+.FL "\(end" "Dictionary order: ignore punctuation"
+.FL "\(enf" "Fold upper case onto lower case"
+.FL "\(eni" "Ignore nonASCII characters"
+.FL "\(enm" "Merge presorted files"
+.FL "\(enn" "Numeric sort order"
+.FL "\(eno" "Next argument is output file"
+.FL "\(enr" "Reverse the sort order"
+.FL "\(ent" "Following character is field separator"
+.FL "\(enu" "Unique mode (delete duplicate lines)"
+.EX "sort \(ennr file" "Sort keys numerically, reversed"
+.EX "sort +2 \(en4 file" "Sort using fields 2 and 3 as key"
+.EX "sort +2 \(ent: \(eno out" "Field separator is \fI:\fP"
+.EX "sort +.3 \(en.6" "Characters 3 through 5 form the key"
+.PP
+.I Sort
+sorts one or more files.
+If no files are specified, \fIstdin\fR is sorted.
+Output is written on standard output, unless \fB\(eno\fP is specified.
+The options \fB+\fIpos1 \fB\(en\fIpos2\fR use only fields \fIpos1\fR
+up to but not including \fIpos2\fR as the sort key, where a field is a
+string of characters delimited by spaces and tabs, unless a different field
+delimiter is specified with \fB\(ent\fR.
+Both \fIpos1\fR and \fIpos2\fR have the form \fIm.n\fR where \fIm\fR tells
+the number of fields and \fIn\fR tells the number of characters.
+Either \fIm\fR or \fIn\fR may be omitted.
+
+
+

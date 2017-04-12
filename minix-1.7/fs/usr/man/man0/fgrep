@@ -1,0 +1,18 @@
+.CD "fgrep \(en fixed grep"
+.SX "fgrep\fR [\fB\(encfhlnsv\fR]\fR [\fIstring_file\fR] [\fIstring\fR] [\fIfile\fR] ..."
+.FL "\(enc" "Count matching lines and only print count, not the lines"
+.FL "\(enf" "Take strings from file named in following argument"
+.FL "\(enh" "Omit file headers from printout"
+.FL "\(enl" "List file names once only"
+.FL "\(enn" "Each line is preceded by its line number"
+.FL "\(ens" "Status only, no output"
+.FL "\(env" "Print only lines not matching"
+.EX "fgrep % prog.c" "Print lines containing % sign"
+.EX "fgrep \(enf pattern prog.c" "Take strings from \fIpattern\fR"
+.PP
+\fIFgrep\fR is essentially the same as grep, except that it only searches
+for lines containing literal strings (no wildcard characters).  The pattern
+may consist of several lines with one string to search on each line.
+
+
+

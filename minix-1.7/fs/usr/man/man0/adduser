@@ -1,0 +1,24 @@
+.CD "adduser \(en add a new user to the system"
+.SX "adduser \fIuser group home-dir\fR"
+.FL "\fR(none)"
+.EX "adduser ast other /usr/ast" "How user ast could be added"
+.EX "adduser bin operator /usr/src" "How user bin could be added"
+.PP
+.I Adduser
+adds a new user to the system by making new entries in
+.B /etc/passwd
+and
+.B /etc/shadow
+for the new user, creating a new home directory, and copying the contents
+of the template home directory
+.B /usr/ast
+into it.  The user-id of this new user will be the first free number not less
+than 10.  The password is initially empty, the full name must be set, and
+the shell is the Bourne Shell,
+.B /bin/sh .
+Use
+.I passwd ,
+.I chfn ,
+and
+.I chsh
+to change.

@@ -1,0 +1,15 @@
+.CD "pathchk \(en check pathname"
+.SX "pathchk [\fB\(enp\fR] \fIpath\fR ..."
+.FL "\(enp" "Check against POSIX rules"
+.EX "pathchk /usr/src/file.c" "Check the accessibility of \fIfile.c\fP"
+.EX "pathchk \(enp file" "Check posix compliance of \fIfile\fR"
+.PP
+.I Pathchk
+verifies path names and display error if paths are too long, contain names
+that are too long, go thru a non-searchable directory or contain an
+invalid character in names. If the \fB\(enp\fR flag is specified, the POSIX
+rules apply instead of the rules of the current file system.
+
+
+
+

@@ -1,0 +1,10 @@
+.CD "banner \(en print a banner"
+.SX "banner \fIarg ..."
+.FL "\fR(none)"
+.EY "banner happy birthday" "Print a banner saying happy birthday"
+.PP
+\fIBanner\fR prints its arguments on \fIstdout\fR using a matrix 
+of 6 x 6 pixels per character.
+
+
+

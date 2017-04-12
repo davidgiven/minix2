@@ -1,0 +1,15 @@
+.CD "update \(en periodically write the buffer cache to disk"
+.SX "update"
+.FL "\fR(none)"
+.EY "update &" "Start a process that flushes the cache"
+.PP
+When the system is booted,
+.I update
+is started up in the background from 
+.I /etc/rc
+to issue a 
+.SY SYNC
+system call every 30 sec.
+
+
+

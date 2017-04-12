@@ -1,0 +1,31 @@
+.CD "term \(en turn PC into a dumb terminal [IBM]"
+.SX "term\fR [\fIbaudrate\fR]\fR [\fIparity\fR] [\fIbits_per_character\fR] [\fIdevice\fR]"
+.FL "\fR(none)"
+.EX "term 2400" "Talk to modem at 2400 baud"
+.EX "term 1200 7 even" "1200 baud, 7 bits/char, even parity"
+.EX "term 8 9600 /dev/tty01" "9600 baud, 8 bits/char, no parity, use tty01"
+.PP
+\fITerm\fR allows 
+.MX
+to talk to a terminal or modem over RS232 
+port 1.  The program first sets the baudrate, parity and character length, 
+and then forks.
+The parent sits in a loop copying from \fIstdin\fR (usually the console's
+keyboard), to the terminal or modem (\fI/dev/tty00\fR).  
+The child sits in a loop
+copying from the terminal or modem (\fI/dev/tty00\fR) to standard output.  
+Thus when
+RS232 port 1 is connected to a modem, every keystroke typed on the keyboard
+is sent to the modem, and every character arriving from the modem is displayed.
+Standard input and output may be redirected, to provide a primitive file
+transfer program, with no checking.  To exit \fIterm\fR, 
+hit the middle button on the numeric pad.
+Important note: to use \fIterm\fR, it is essential that 
+\fI/etc/ttytab\fR is configured so
+that there is no shell hanging on \fI/dev/tty00\fR.  
+If there is, both the shell and
+term will try to read from \fI/dev/tty00\fR, and nothing will work.
+
+
+
+.SP 0.5

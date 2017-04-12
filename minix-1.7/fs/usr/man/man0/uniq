@@ -1,0 +1,19 @@
+.CD "uniq \(en delete consecutive identical lines in a file"
+.SX "uniq\fR [\fB\(encdu\fR]\fR [\fB\(en\fIn\fR] [\fB+\fIn\fR] [\fIinput [\fIoutput\fR]\fR]
+.FL "\(enc" "Give count of identical lines in the input"
+.FL "\(end" "Only duplicate lines are written to output"
+.FL "\(enu" "Only unique lines are written to output"
+.FL "\(en\fIn\fR" "Skip the first \fIn\fR columns when matching"
+.FL "+\fIn\fR" "Skip the first \fIn\fR fields when matching"
+.EX "uniq +2 file" "Ignore first 2 fields when comparing"
+.EX "uniq \(end inf outf" "Write duplicate lines to \fIoutf\fP"
+.PP
+.I Uniq
+examines a file for consecutive lines that are identical.
+All but duplicate entries are deleted, and the file is written to output.
+The +\fIn\fR option skips the first \fIn\fR fields, where a field is defined
+as a run of characters separated by white space.
+The \(en\fIn\fP option skips the first \fIn\fR spaces.
+Fields are skipped first.
+
+

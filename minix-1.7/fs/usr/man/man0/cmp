@@ -1,0 +1,17 @@
+.CD "cmp \(en compare two files"
+.SX "cmp\fR [\fB\(enls\fR] \fIfile1 file2"
+.FL "\(enl" "Loud mode. Print bytes that differ (in octal)"
+.FL "\(ens" "Silent mode.  Print nothing, just return exit status"
+.EX "cmp file1 file2" "Tell whether the files are the same"
+.EX "cmp \(enl file1 file2" "Print all corresponding bytes that differ"
+.PP
+Two files are compared.
+If they are identical, exit status 0 is returned.
+If they differ, exit status 1 is returned.
+If the files cannot be opened, exit status 2 is returned.
+If one of the file arguments is \(en, then
+\fIstdin\fR is compared to 
+the other file.
+
+
+

@@ -1,0 +1,12 @@
+.CD "file \(en make a guess as to a file's type based on contents"
+.SX "file \fIname ..."
+.FL "\fR(none)"
+.EY "file a.out ar.h" "Guess at types"
+.PP
+\fIFile\fR reads the first block of a file and tries to make an 
+intelligent guess about what kind of file it is.  
+It understands about archives, C
+source programs, executable binaries, shell scripts, and English text.
+
+
+

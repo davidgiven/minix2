@@ -1,0 +1,35 @@
+.CD "cp, cpdir \(en file copy"
+.SX "cp [\fB\(enpifsmrRvx\fR] \fIfile1\fR \fIfile2\fR"
+.SX "cp [\fB\(enpifsrRvx\fR] \fIfile\fR ... \fIdirectory\fR"
+.SX "cpdir [\fB\(enifvx\fR] \fIfile1\fR \fIfile2\fR"
+.FL "\(enp" "Preserve full mode, uid, gid and times"
+.FL "\(eni" "Ask before removing existing file"
+.FL "\(enf" "Forced remove existing file"
+.FL "\(ens" "Make similar, copy some attributes"
+.FL "\(enm" "Merge trees, disable the into-a-directory trick"
+.FL "\(enr" "Copy directory trees with link structure, etc. intact"
+.FL "\(enR" "Copy directory trees and treat special files as ordinary"
+.FL "\(env" "Display what cp is doing"
+.FL "\(enx" "Do not cross device boundaries"
+.EX "cp oldfile newfile" "Copy \fIoldfile\fR to \fInewfile\fR"
+.EX "cp -R dir1 dir2" "Copy a directory tree"
+.PP
+.I Cp
+copies one file to another, or copies one or more files to a directory.
+Special files are normally opened and read, unless \fB\(enr\fP is used.
+\fB\(enr\fP also copies the link structure, something \fB\(enR\fP doesn't
+care about.
+The \fB\(ens\fP option differs from \fB\(enp\fP that it only copies the
+times if the target file already exists.  A normal copy only copies the
+mode of the file, with the file creation mask applied.  Set-uid bits are
+cleared if the owner cannot be set.  (The \fB\(ens\fP flag does not
+patronize you by clearing bits.  Alas \fB\(ens\fP and \fB\(enr\fP are
+nonstandard.)
+.PP
+.I Cpdir
+is a convenient synonym for \fBcp \(enpsmr\fP to make a precise copy of
+a directory tree.
+
+
+
+

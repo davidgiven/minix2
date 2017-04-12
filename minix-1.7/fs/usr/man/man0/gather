@@ -1,0 +1,28 @@
+.CD "gather \(en gather up the files in a directory for transmission"
+.SX "gather\fR [\fB\(ens\fR] \fIsource_dir [\fB\(end\fR] dest_dir\fR [\fB\(enb\fR] \fIbytes\fR [\fB\(enf\fR] \fIfile\fR 
+.FL "\(enb" "Desired number of bytes per output file"
+.FL "\(end" "Destination directory"
+.FL "\(enf" "Base name of output files"
+.FL "\(ens" "Source directory"
+.EX "gather" "Collect files in current dir into 60K archives"
+.EX "gather \(end dir" "Put the archives in \fIdir\fR
+.EX "gather \(enb 90000" "Try to produce 90K archives"
+.EX "gather \(ens .. \(end targ \(enb 5000" "Try to produce 5K archives"
+.PP
+It is often useful to collect all the files in a directory into one or
+more archives for transmission by mail.  This program collects all the
+files in the source directory (default: current directory) and puts
+them into a shar archive.  The shar archive is then compressed and
+uuencoded.  An attempt is made to have the final \fI.uue\fR file be
+about the given size (default: 60K), but since \fIgather\fR cannot really
+predict how much \fIshar\fR will add to the file, how much \fIcompress\fR
+will reduce the file, and how much \fIuue\fR will add again, the sizes
+can fluctuate.  If the \fB\(enf \fIfile\fR flag is given, the archives will
+be given the names \fIfile_00.uue\fR, \fIfile_01.uue\fR etc.  If \fB\(enf\fR
+is not given, the name of the source directory is used as the base name.
+Since 7 characters of suffix are appended, the base name should not exceed
+7 characters.
+
+
+
+.SP -0.5

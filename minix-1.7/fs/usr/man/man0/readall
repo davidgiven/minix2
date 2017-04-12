@@ -1,0 +1,20 @@
+.CD "readall \(en read a device quickly to check for bad blocks"
+.SX "readall\fR [\fB\(enbt\fR] \fIfile"
+.FL "\(enb" "Produce shell script on \fIstdout\fR that calls \fIbadblocks\fR"
+.FL "\(ent" "Just print device size"
+.EX "readall /dev/hd0" "Read all of \fI/dev/hd0\fR"
+.EX "readall -b /dev/hd1 >s" "Generate shell script on \fIs\fR"
+.PP
+\fIReadall\fR reads all of the named device in large chunks.  
+It reports about blocks that it cannot read.  
+Unlike \fIdiskcheck\fR, it does not attempt to write on
+the disk, making it safer to use when one is worried about a sick system.
+When the \fB\(enb\fR flag is given, the output is a shell script that
+calls the \fIbadblocks\fR program to marked all the bad blocks.
+Whenever installing 
+.MX ,
+it is wise to run \fIreadall\fR with the \fB\(enb\fR flag first on all
+the hard disks.
+
+
+

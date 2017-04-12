@@ -1,0 +1,9 @@
+.CD "printenv \(en print out the current environment"
+.SX "printenv"
+.FL "\fR(none)"
+.EY "printenv" "Print the environment"
+.PP
+\fIPrintenv\fR prints out the current environment strings, one per line.
+
+
+

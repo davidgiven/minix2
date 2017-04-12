@@ -1,0 +1,12 @@
+.CD "tsort \(en topological sort [IBM]"
+.SX "tsort \fIfile"
+.FL "\fR(none)"
+.EX "lorder *.s | tsort" "Give library ordering"
+.EX "ar cr libc.a \`lorder *.s | tsort\`" "Build library"
+.PP
+\fITsort\fR accepts a file of lines containing ordered pairs and builds a
+total ordering from the partial orderings.
+
+
+
+.SP 1.5

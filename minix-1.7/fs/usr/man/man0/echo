@@ -1,0 +1,15 @@
+.CD "echo \(en print the arguments"
+.SX "echo\fR [\fB\(enn\fR] \fIargument\fR ..."
+.FL "\(enn" "No line feed is output when done"
+.EX "echo Start Phase 1" "\*(OQStart Phase 1\*(CQ is printed"
+.EX "echo \(enn Hello" "\*(OQHello\*(CQ is printed without a line feed"
+.PP
+.I Echo 
+writes its arguments to standard output.
+They are separated by blanks and terminated with a line feed unless
+.B \(enn
+is present.
+This command is used mostly in shell scripts.
+
+
+

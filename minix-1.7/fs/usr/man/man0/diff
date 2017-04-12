@@ -1,0 +1,30 @@
+.CD "diff \(en print differences between two files"
+.SX "diff  \fR [\fB\(enc \fR|\fB \(ene \fR|\fB \(enC \fIn\fR\] [\fB\(enbr\fR]\fIfile1 file2\fR"
+.FL "\(enC \fIn" "Produce output that contains \fIn\fR lines of context"
+.FL "\(enb" "Ignore white space when comparing"
+.FL "\(enc" "Produce output that contains three lines of context"
+.FL "\(ene" "Produce an \fIed\fR-script to convert \fIfile1\fR into \fIfile2\fR"
+.FL "\(enr" "Apply \fIdiff\fR recursively to files and directories of
+the same name, when \fIfile1\fR and \fIfile2\fR are both directories"
+.EX "diff file1 file2" "Print differences between 2 files"
+.EX "diff -C 0 file1 file2" "Same as above"
+.EX "diff -C 3 file1 file2" "Output three lines of context with every
+difference encountered"
+.EX "diff -c file1 file2" Same as above"
+.EX "diff /etc /dev" "Compares recursively the directories \fI/etc\fR and \fI/dev\fR"
+.EX "diff passwd /etc" "Compares \fI./passwd\fR to \fI/etc/passwd"
+.PP
+\fIDiff\fR compares two files and generates a list of lines telling how
+the two files differ.  Lines may not be longer than 128 characters.
+If the two  arguments on the command line are both directories,
+\fIdiff\fR recursively steps through all subdirectories comparing
+files of the same name. If a file name is found only in one directory,
+a diagnostic message is written to \fIstdout\fR. A file that is of
+either block special, character special or FIFO special type, cannot
+be compared to any other file.
+On the other hand, if there is one directory and one file given on the
+command line, \fIdiff\fR tries to compare the file with the same name
+as \fIfile\fR in the directory \fIdirectory\fR.
+
+
+

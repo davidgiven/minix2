@@ -1,0 +1,10 @@
+.CD "factor \(en factor an integer less than 2**31"
+.SX "factor \fInumber"
+.FL "\fR(none)"
+.EY "factor 450180" "Print the prime factors of 450180"
+.PP
+\fIFactor\fR prints the prime factors of its argument in increasing order.
+Each factor is printed as many times as it appears in the number.
+
+
+

@@ -1,0 +1,23 @@
+.CD "modem \(en switch the modem and getty state"
+.SX "modem \fR[\fB\(eno\fR] [\fB\(eni \fInum\fR] \fBtty\fIn\fR"
+.FL "\(eno" "Turn getty off and set modem to dialout"
+.FL "\(eni" "Set line to dialin"
+.EX "modem \(eno tty00" "Set tty00 to dialout"
+.EX "modem \(eni2 tty00" "Set tty00 to dialin (2 rings)"
+.PP
+The \fIgetty\fR program allows a terminal port to be used for both dialin and
+dialout. 
+This little program switches the getty state, and also sends
+some commands to the modem attached to the specified line.
+If the \fB\(eno\fR flag is presnt, \fImodem\fR will put the 
+getty process (if any) connected to the specified line into 
+SUSPEND state, which means that it
+will not pay attention to that line until it is reset to RESTART state.
+Also, \fImodem\fR will send some (Hayes) 
+commands to the attached modem to disable the auto-nanswer mode. 
+The \fB\(eni\fR flag specifies the number of times the telephone has to 
+ring before the modem may answer the call (to give the operator a chance).
+
+
+
+.SP 1

@@ -1,0 +1,14 @@
+.CD "df \(en report on free disk space and i-nodes"
+.SX "df \fIspecial ..."
+.FL "\fR(none)"
+.EX "df /dev/ram" "Report on free RAM disk space"
+.EX "df /dev/fd0 /dev/fd1" "Report on diskette space"
+.EX "df~~~" "Report on all mounted devices"
+.PP
+The amount of disk space and number of i-nodes, both free and used is
+reported.
+If no argument is given, \fIdf\fR reports on the root device and all mounted
+file systems.
+
+
+

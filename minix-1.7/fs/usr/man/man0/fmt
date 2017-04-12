@@ -1,0 +1,14 @@
+.CD "fmt \(en adjust line-length for paragraphs of text"
+.SX "fmt\fR [\(en\fIwidth\fR] [\fIfiles\fR] ..."
+.FL "\(en\fIN\fP" "Specify the line width"
+.EY "!}fmt" "Formats one paragraph when typed in \fIvi\fP"
+.PP
+\fIFmt\fR formats paragraphs in a text file to make the lines be approximately
+the same width.  It preserves indentation and word spacing.  It is typically
+used from within \fIvi\fP as in the example.  The default line length is 72
+characters, \fBfmt \(en66\fP for instance would format text to a 66 character
+line length.
+
+
+
+.SP 1.6

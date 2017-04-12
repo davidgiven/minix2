@@ -1,0 +1,16 @@
+.CD "ascii \(en strip all the pure ASCII lines from a file"
+.SX "ascii\fR [\fB\(enn\fR]\fR [\fIfile\fR]"
+.FL "\(enn" "Extract the lines containing nonASCII characters"
+.EX "ascii file >outf" "Write all the ASCII lines on \fIoutf\fR"
+.EX "ascii \(enn <file >outf" "Write all the nonASCII lines on \fIoutf\fR"
+.PP
+Sometimes a file contains some nonASCII characters that are in the way.
+This program allows the lines containing only ASCII characters to be 
+\fIgrepped\fR from the file.  
+With the \fB\(enn\fR flag, the nonASCII lines are 
+\fIgrepped\fR.  
+No matter whether the flag is used or not, the program returns an exit status 
+of true if the file is pure ASCII, and false otherwise.
+
+
+

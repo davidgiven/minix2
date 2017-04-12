@@ -1,0 +1,12 @@
+.CD "mkfifo \(en make a named pipe"
+.SX "mkfifo [\fB\(enm \fImode\fR] \fIfifo ..."
+.FL "\(enm" "Create fifo with specified mode"
+.EX "mkfifo pipe" "Create \fIpipe\fP in the current directory"
+.EX "mkfifo -m a+w systatus" "Create the \fIsystatus\fP writable by all"
+.PP
+The specified fifo special files are created.
+If the \fB\(enm\fR flag is used, this will be equivalent to a chmod
+on the fifo special file after its creation.
+
+
+

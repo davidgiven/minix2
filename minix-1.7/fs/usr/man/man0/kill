@@ -1,0 +1,13 @@
+.CD "kill \(en send a signal to a process"
+.SX "kill\fR [\fB\(en\fIn\fR] \fIprocess"
+.FL "\(en\fIn\fR" "Signal number to send"
+.EX "kill 35" "Send signal 15 to process 35"
+.EX "kill \(en9 40" "Send signal 9 to process 40"
+.EX "kill \(en2 0" "Send signal 2 to whole process group"
+.PP
+A signal is sent to a given process.
+By default signal 15 (SIGTERM) is sent.
+Process 0 means all the processes in the sender's process group.
+
+
+

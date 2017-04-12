@@ -1,0 +1,15 @@
+.CD "animals \(en twenty-questions type guessing game about animals"
+.SX "animals\fR [\fIdatabase\fR]"
+.FL "\fR(none)"
+.EY "animals" "Start the game"
+.PP
+\fIAnimals\fR is a guessing game.  The user picks an animal and the 
+computer tries to guess it by posing questions that should be answered by 
+typing \*(OQy\*(CQ for yes and \*(OQn\*(CQ for no.  
+Whenever the computer loses, it asks 
+some questions that allow it to improve its database, so as time goes on, it 
+learns.  The default database should be in \fI/usr/lib/animals\fR.
+
+
+
+.SP 0.3

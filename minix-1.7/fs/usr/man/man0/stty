@@ -1,0 +1,53 @@
+.CD "stty \(en set terminal parameters"
+.SX "stty\fR [\fIoption ...\fR]
+.FL "\fR(none)"
+.EX "stty \(enecho" "Suppress echoing of input"
+.EX "stty erase #" "Set the erase character to \fI#\fP"
+.PP
+When given no arguments,
+.I stty
+prints the current terminal parameters.
+It can also be used to set the parameters, as follows:
+.ta 0.25i 1i
+.HS
+	\fBcbreak\fP	\(en Enter \fIcbreak\fP mode; erase and kill disabled
+.br
+	\fBecho\fP	\(en Echo input on the terminal
+.br
+	\fBnl\fP	\(en Accept only line feed to end lines
+.br
+	\fBraw\fP	\(en Enter \fIraw\fP mode; no input processing at all
+.br
+	\fBtabs\fP	\(en Output tabs (do not expand to spaces)
+.br
+	\fBerase\fR c	\(en Set erase character (initially backspace)
+.br
+	\fBint\fR c	\(en Set interrupt (SIGINT) character (initially DEL)
+.br
+	\fBkill\fR c	\(en Set kill line character (initially @)
+.br
+	\fBquit\fR c	\(en Set quit (SIGQUIT) character (initially CTRL-\\)
+.br
+	\fBeven\fR	\(en Use even parity
+.br
+	\fBodd\fR	\(en Use odd parity
+.br
+	\fB[5-8]\fR	\(en Number of bits per character
+.br
+	\fB[110-9600]\fR	\(en Baud rate
+.br
+	\fBdefault\fR	\(en Set options back to original values
+.HS
+The first five options may be prefixed by \fB\(en\fP as in \fB\(entabs\fP
+to turn the option off.
+The next four options each have a single character parameter separated by a
+space from the option.
+The \fBdefault\fR option sets the mode and the four settable characters back
+to the values they had when the system was booted.
+It is useful when a rogue program has messed them up.
+For convenience you can specify control characters as a two character
+combination:  ^H for instance is a backspace.  The form ^? is a DEL.
+
+
+
+.SP 2.0

@@ -1,0 +1,16 @@
+.CD "cgrep \(en grep and display context"
+.SX "cgrep\fR [\fB\(ena \fIn\fR]\fR [\fB\(enb \fIn\fR] [\fB\(enf\fR] [\fB\(enl \fIn\fR]  [\fB\(enn\fR] [\fB\(enw \fIn\fR] \fIpattern\fR [\fIfile\fR] ...
+.FL "\(ena" "How many lines to display after the matching line"
+.FL "\(enb" "How many lines to display before the matching line"
+.FL "\(enf" "Suppress file name in the output"
+.FL "\(enl" "Lines are truncated to this length before comparison"
+.FL "\(enn" "Suppress line numbers in the output"
+.FL "\(enw" "Sets window size (same as \fB\(ena\fR n \fB\(enb\fR n)"
+.EY "cgrep \(enw 3 hello file1" "Print 3 lines of context each way"
+.PP
+\fICgrep\fR is a program like \fIgrep\fR, except that it also can print
+a few lines above and/or below the matching lines.
+It also prints the line numbers of the output.
+
+
+

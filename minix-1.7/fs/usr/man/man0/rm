@@ -1,0 +1,21 @@
+.CD "rm \(en remove a file"
+.SX "rm\fR [\fB\(enifrRvx\fR] \fIname\fR ..."
+.FL "\(eni" "Interactive remove: ask before removing"
+.FL "\(enf" "Forced remove: no questions asked"
+.FL "\(enrR" "Remove directories and their contents"
+.FL "\(env" "Tell what rm is removing"
+.FL "\(enx" "Do not cross device boundaries"
+.EX "rm file" "Remove \fIfile\fR"
+.EX "rm \(eni *.c" "Remove \fI.c\fP files, asking about each"
+.PP
+.I Rm
+removes one or more files.
+If a file has no write permission,
+.I rm
+asks for permission (type \*(OQy\*(CQ or \*(OQn\*(CQ) unless \fB\(enf\fR
+is specified.
+If the file is a directory, it will be recursively descended and removed
+if and only if the \fB\(enR\fR flag is present.
+
+
+

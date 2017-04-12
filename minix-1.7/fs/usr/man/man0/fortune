@@ -1,0 +1,11 @@
+.CD "fortune \(en print a fortune"
+.SX "fortune"
+.FL "\fR(none)"
+.EY "fortune" "Print a fortune"
+.PP
+\fIFortune\fR prints a fortune at random from the fortunes file,  
+\fI/usr/lib/fortune.dat\fR.  This file consists of pieces
+of text separated by a line containing only %%.
+
+
+

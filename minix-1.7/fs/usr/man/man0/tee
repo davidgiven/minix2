@@ -1,0 +1,13 @@
+.CD "tee \(en divert \fIstdin\fP to a file"
+.SX "tee\fR [\fB\(enai\fR] \fIfile\fR ..."
+.FL "\(ena" "Append to the files, rather than overwriting"
+.FL "\(eni" "Ignore interrupts"
+.EX "cat file1 file2 | tee x" "Save and display two files"
+.EX "pr file | tee x | lpr" "Save the output of \fIpr\fP on \fIx\fP"
+.PP
+.I Tee
+copies \fIstdin\fR to standard output.
+It also makes copies on all the files listed as arguments.
+
+
+

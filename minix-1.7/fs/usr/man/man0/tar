@@ -1,0 +1,32 @@
+.CD "tar \(en tape archiver"
+.SX "tar\fR [\fBFcotvxp\fR]\fR [\fBf\fR] \fItarfile \fIfile ...
+.FL "F" "Force tar to continue after an error"
+.FL "c" "Create a new archive; add named files"
+.FL "o" "Set uid/gid to original values on extraction"
+.FL "f" "Next argument is name of tarfile"
+.FL "t" "Print a table listing the archive's contents"
+.FL "v" "Verbose mode-tell what is going on as it happens"
+.FL "x" "The named files are extracted from the archive"
+.FL "p" "Restore file modes, ignore creation mask"
+.FL "D" "Directory only, do not recurse"
+.EX "tar c /dev/fd1 ." "Back up current directory to \fI/dev/fd1\fR"
+.EX "tar xv /dev/fd1 file1 file2" "Extract two files from the archive"
+.EX "tar cf \(en | (cd dest; tar xf \(en)" "Copy current directory to \fIdest\fR"
+.PP
+\fITar\fR is a POSIX-compatible archiver, except that it does not use tape.
+It's primary advantage over
+.I ar
+is that the 
+.I tar
+format is somewhat more standardized than the
+.I ar 
+format, making it theoretically possible to transport 
+.MX
+files to another computer, but do not bet on it.
+If the target machine runs
+.SY MS-DOS ,
+try
+.I doswrite .
+
+
+

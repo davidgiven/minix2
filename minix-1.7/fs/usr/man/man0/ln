@@ -1,0 +1,42 @@
+.CD "ln, clone \(en create a link to a file"
+.SX "ln [\fB\(enifmrRvx\fR] \fIfile\fR [\fIname\fR]
+.SX "ln [\fB\(enifrRvx\fR] \fIfile\fR ... \fIdir\fR
+.SX "clone [\fB\(enifmvx\fR] \fIfile\fR [\fIname\fR]
+.FL "\(eni" "Ask if ok to remove a file"
+.FL "\(enf" "Remove existing links"
+.FL "\(enm" "Merge trees, disable the into-a-directory trick"
+.FL "\(enrR" "Recursively link a directory tree"
+.FL "\(env" "Display what ln is doing"
+.FL "\(enx" "Do not cross device boundaries"
+.EX "ln file newname" "Make \fInewname\fP a synonym for \fIfile\fP"
+.EX "ln /usr/games/chess" "Create a link called \fIchess\fP"
+.PP
+A directory entry is created for
+.I name .
+The entry points to
+.I file .
+Henceforth,
+.I name
+and
+.I file
+can be used interchangeably.
+If
+.I name
+is not supplied, the last component of
+.I file
+is used as the link name.
+If more than one
+.I file
+is supplied or the
+.I name
+refers to an existing directory, links will be created in that directory.
+An existing
+.I name
+will not be removed unless the \fB\(eni\fR or \fB\(enf\fR flag is specified.
+.PP
+.I Clone
+is a convenient synonym for \fBln \(enfmr\fP to create a so-called "link farm",
+a directory full of links to the original tree.
+
+
+

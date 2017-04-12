@@ -1,0 +1,15 @@
+############ NEXT ENTRY HAS NOT BEEN CHECKED #############
+.CD "touch \(en update a file's time of last modification"
+.SX "touch\fR [\fB\(enc\fR] \fIfile\fR ..."
+.FL "\(enc" "Do not create the file"
+.EY "touch *.h" "Make the \fI.h\fP files look recent"
+.PP
+The time of last modification is set to the current time.
+This command is mostly used to trick
+.I make
+into thinking that a file is more recent than it really is.
+If the file being touched does not exist, it is created, unless the \fB\(enc\fR
+flag is present.
+
+
+

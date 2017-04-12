@@ -1,0 +1,20 @@
+.CD "asize \(en report the size of an object file"
+.SX "asize \fIfile\fR ..."
+.FL "\fR(none)"
+.EY "asize test.o" "Give the size of \fItest.o\fR"
+.PP
+.I Asize
+prints for each argument
+the (decimal) number of bytes used by the different sections,
+as well as their sum in decimal and hexadecimal.
+If no
+.I file
+is given \fIa.out\fR is used.
+.I Asize
+can only be used to obtain the size of a \(M2 \fI.o\fR or \fI.out\fR file. 
+To obtain the size of an executable, use
+.I size
+instead.
+
+
+

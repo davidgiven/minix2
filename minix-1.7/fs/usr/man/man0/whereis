@@ -1,0 +1,11 @@
+.CD "whereis \(en examine system directories for a given file"
+.SX "whereis \fIfile"
+.FL "\fR(none)"
+.EY "whereis stat.h" "Prints: \fI/usr/include/sys/stat.h\fR"
+.PP
+\fIWhereis\fR searches a fixed set of system 
+directories, \fI/bin\fR, \fI/lib\fR, \fI/usr/bin\fR,
+and others, and prints all occurrences of the argument name in any of them.
+
+
+

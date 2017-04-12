@@ -1,0 +1,23 @@
+.CD "mv \(en move or rename a file"
+.SX "mv [\fB\(enifsmvx\fR] \fIfile1 file2"
+.SX "mv [\fB\(enifsvx\fR] \fIfile\fR ... \fIdirectory"
+.FL "\(eni" "Prompt before removing existing files"
+.FL "\(enf" "Do not prompt before removing existing files"
+.FL "\(ens" "Do not clear any mode bits if owner can't be set"
+.FL "\(enm" "Merge directory trees"
+.FL "\(env" "Tell what mv is doing"
+.FL "\(enx" "Do not cross device boundaries"
+.EX "mv oldname newname" "Move \fIoldname\fP to \fInewname\fP"
+.EX "mv file1 file2 /user/ast" "Move two files to \fI/user/ast\fP"
+.PP
+.I Mv
+moves one or more files from one place in the file system to another.
+If the old path and new path are on the same device, it is done by renaming
+otherwise by copying. If you're not superuser, the copy will destroy the
+file's owner, group and setuid/setgid bits.
+.I mv
+will prompt before removing non-writable files if \fBstdin\fR is a terminal
+or the \fB\(eni\fR flag was specified.
+
+
+

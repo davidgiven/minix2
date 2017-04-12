@@ -1,0 +1,16 @@
+.CD "chgrp \(en change group"
+.SX "chgrp [\fB\(enR\fR] [\fIowner:\fR]\fIgroup \fIfile\fR ..."
+.FL "\(enR" "Change directory hierarchies"
+.EX "chgrp system file1 file2" "Make \fIsystem\fR the group of the files"
+.EX "chrgp \(enR other dir1" "Make \fIother\fR the group of all files below dir1"
+.PP
+The group field (and optionally owner field) of the named files is changed to 
+.I group
+and
+.I owner .
+Alternatively, a decimal gid (uid) may be specified instead of a group name.
+If the \fB\(enR\fR flag is used, the changes will be applied recursively to
+all files in named directories. Only the superuser may execute this command.
+
+
+

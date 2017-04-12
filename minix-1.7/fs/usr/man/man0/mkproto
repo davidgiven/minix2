@@ -1,0 +1,20 @@
+.CD "mkproto \(en create a \s-2MINIX\s0 prototype file"
+.SX "mkproto \fR[\fB\(enb \fIn\fR] [\fB\(end \fIstr\fR] [\fB\(eng \fIn\fR] [\fB\(eni \fIn\fR] [\fB\(enp \fInnn\fR] [\fB\(ens\fR] [\fB\(ent \fIroot\fR] [\fB\(enu \fIn\fR] \fIsource_directory\fR [\fIprototype_file\fR]"
+.FL "\(enb" "Number of blocks in the prototype is \fIn\fR"
+.FL "\(end" "Indent the prototype file using \fIstr\fR instead of tab"
+.FL "\(eng" "Use \fIn\fR as the gid for all files and directories"
+.FL "\(eni" "Number of i-nodes in the prototype is \fIn\fR"
+.FL "\(enp" "Use \fInnn\fR (3 octal digits) as the protection mode"
+.FL "\(ens" "Use the same uid, gid and mode as the source files have"
+.FL "\(ent" "Use the string \fIroot\fR as the path prefix for every file"
+.FL "\(enu" "Use \fIn\fR as the uid for all files and directories"
+.EX "mkproto \(enb360" "Make a 360K prototype of this directory"
+.EX "mkproto \(enu2 \(eng1 \(enp644" "Give all files uid 2, gid 1 and mode 644"
+.PP
+\fIMkproto\fR creates an \fImkfs\fR prototype file for the specified
+source-directory. 
+The prototype file is either written to \fIstdout\fR or, if specified, 
+the proto-file.
+
+
+

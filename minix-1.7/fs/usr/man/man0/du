@@ -1,0 +1,13 @@
+.CD "du \(en print disk usage"
+.SX "du\fR [\fB\(enas\fR]\fR [\fB\(enl \fIn\fR] \fIdir\fR ..."
+.FL "\(ena" "Give usage for all files"
+.FL "\(enl" "List up to \fIn\fR levels of subdirectories"
+.FL "\(ens" "Summary only"
+.EX "du dir" "List disk space used by files in dir"
+.EX "du \(ens dir1 dir2" "Give summaries only"
+.PP
+\fIDu\fR examines one or more directories and prints the amount of space 
+occupied by the files in those directories and their subdirectories.
+
+
+

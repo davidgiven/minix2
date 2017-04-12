@@ -1,0 +1,12 @@
+.CD "ref \(en look up a reference in a \fItags\fR file"
+.SX "ref \fIfunction\fR"
+.FL "\fR(none)"
+.EY "ref func" "Find \fIfunc\fR"
+.PP
+\fIRef\fR looks up a function name in the \fIrefs\fR file in the current
+directory.
+This file is usually made by \fIctags\fR.
+
+
+
+.SP 1.6

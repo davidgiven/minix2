@@ -1,0 +1,45 @@
+.CD "fsck, fsck1 \(en perform file system consistency check"
+.SX "fsck\fR [\fB\(enaclmrs\fR]\fR [\fIdevice\fR] ..."
+.FL "\(ena" "Automatically repair inconsistencies"
+.FL "\(enc" "Check and list only the specified i-nodes
+.FL "\(enl" "List the files and directories in the filesytem
+.FL "\(enr" "Prompt user for repairs if inconsistencies are found
+.FL "\(ens" "List the superblock of the file system"
+.EX "fsck /dev/hd4" "Check file system on \fI/dev/hd4\fR"
+.EX "fsck \(ena /dev/at0" "Automatically fix errors on \fI/dev/at0\fR"
+.EX "fsck \(enl /dev/fd0" "List the contents of \fI/dev/fd0\fR"
+.EX "fsck \(enc 2 3 /dev/hd3" "Check and list \fI/dev/hd3\fR i-nodes 2 & 3"
+.PP
+\fIFsck\fR performs consistency checks on the file systems which reside 
+on the specified devices.
+\fIFsck1\fR is an alternate version for use on obsolete V1 file systems.
+When either the \fB\(ena\fR or \fB\(enr\fR flags are given, the file system
+will be repaired if errors are found.
+Before running \fIfsck\fR on a mounted file system, it must first be unmounted.
+Trying to repair a mounted file system is dangerous and should not be 
+attempted.
+.PP
+To repair the root file system (which cannot be unmounted), first 
+hit the F1 key to find the pid of the \fI/etc/update\fR process.
+Then become superuser and send \fIupdate\fR signal 9 using \fIkill\fR.
+After doing this, hit F1 again to verify that \fI/etc/update\fR has vanished.
+Next run \fIfsck\fR and then immediately reboot
+the computer, WITHOUT doing a \fIsync\fR.
+.PP
+This is the only situation in which you can (in fact, must) reboot without
+doing a \fIsync\fR.
+Rebooting is needed because \fIfsck\fR repairs the disk but does not affect
+the (possibly incorrect) information held in memory.
+Doing a \fIsync\fR would force the (possibly incorrect) information from
+memory back onto the disk, thus ruining the work done by \fIfsck\fR.
+By rebooting immediately, memory is reloaded with correct information from the
+disk.
+It is necessary to kill \fI/etc/update\fR before repairing the root file system
+to prevent it from issuing \fIsync\fR calls while \fIfsck\fR is running.
+Because \fI/etc/update\fR only affects mounted file systems (and the root),
+when repairing a nonroot file system, unmounting it is sufficient; it is not
+necessary to kill \fI/etc/update\fR.
+
+
+
+.SP 1

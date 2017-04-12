@@ -1,0 +1,14 @@
+.CD "umount \(en unmount a mounted file system"
+.SX "umount \fIspecial"
+.FL "\fR(none)"
+.EY "umount /dev/fd1" "Unmount diskette 1"
+.PP
+A mounted file system is unmounted after the cache has been flushed to disk.
+A diskette should never be removed while it is mounted.
+If this happens, and is discovered before another diskette is inserted, the
+original one can be replaced without harm.
+Attempts to unmount a file system holding working directories or open files
+will be rejected with a \*(OQdevice busy\*(CQ message.
+
+
+

@@ -1,0 +1,13 @@
+.CD "termcap \(en print the current termcap entry"
+.SX "termcap\fR [\fItype\fR]"
+.FL "\fR(none)"
+.EY "termcap" "Print the termcap entry"
+.PP
+\fITermcap\fR reads the /etc/termcap entry corresponding to the 
+terminal type
+supplied as the argument.  If none is given, the current $TERM is used.
+It then prints out all the parameters that apply.
+
+
+
+.SP 0.5

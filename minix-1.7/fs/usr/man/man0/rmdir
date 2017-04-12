@@ -1,0 +1,12 @@
+.CD "rmdir \(en remove a directory"
+.SX "rmdir \fIdirectory ...
+.FL "\fR(none)"
+.EX "rmdir /user/ast/foobar" "Remove directory \fIfoobar\fP"
+.EX "rmdir /user/ast/f*" "Remove 0 or more directories"
+.PP
+The specified directories are removed.
+Ordinary files are not removed.
+The directories must be empty.
+
+
+

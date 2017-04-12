@@ -1,0 +1,19 @@
+.CD "true, false \(en exit with the value true or false"
+.SX "true"
+.SX "false"
+.FL "\fR(none)"
+.EY "while true" "List the directory until DEL is hit"
+.br
+	do ls \(enl
+.br
+	done
+.PP
+These commands return the value
+.I true
+or
+.I false .
+They are used for shell programming.
+
+
+
+.SP 1.5

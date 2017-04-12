@@ -1,0 +1,25 @@
+.CD "ctags \(en build a tags file"
+.SX "ctags \fR[\fB\(enr\fR]\fR \fIfile\fR ..."
+.FL "\(enr" "Generate refs as well as tags"
+.EY "ctags \(enr *.h *.c" "Generate the tags file"
+.PP
+\fICtags\fR generates a \fItags\fR file from a collection of
+C source files.  It can also generate a \fIrefs\fR file.
+The \fItags\fR file is used by \fIelvis'\fR 
+\*(OQ:tag\*(CQ command, and its \fB\(ent\fR
+option. 
+Each C source file is scanned for \fI#define\fR statements and global
+function definitions.  The name of the macro or function becomes the name of
+a tag.  For each tag, a line is added to the \fItags\fR file which contains:
+the name of the tag, a tab character, the name of the file containing the tag,
+a tab character, and a way to find the particular line within the file.
+.PP
+The \fIrefs\fR file is used by the \fIref\fR program, which can be invoked 
+via \fIelvis\fR K command.  When ctags finds a global function definition, it 
+copies the function header into the \fIrefs\fR file.  
+The first line is flush against the
+right margin, but the argument definitions are indented.the C source files.
+
+
+
+.SP -0.5

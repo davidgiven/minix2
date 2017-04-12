@@ -1,0 +1,12 @@
+.CD "login \(en log into the computer"
+.SX "login\fR [\fIuser\fR]"
+.FL "\fR(none)"
+.EY "login ast" "Login as ast"
+.PP
+\fILogin\fR allows a logged in user to login as someone else without first
+logging out.
+If a password is needed, \fIlogin\fR will prompt for it.
+
+
+
+.SP 1.6

@@ -1,0 +1,51 @@
+.CD "mail \(en send and receive electronic mail"
+.SX "mail\fR [\fB\(endpqrv\fR]\fR [\fB\(enf \fIfile\fR] [\fIuser\fR]
+.FL "\(end" "Force use of the shell variable \fIMAILER\fR"
+.FL "\(enf" "Use \fIfile\fR instead of \fI/usr/spool/mail/user\fR as mailbox"
+.FL "\(enp" "Print all mail and then exit"
+.FL "\(enq" "Quit program if SIGINT received"
+.FL "\(enr" "Reverse print order, i.e., print oldest first"
+.FL "\(env" "Verbose mode"
+.EX "mail ast" "Send a message to \fIast\fR"
+.EX "mail" "Read your mail"
+.PP
+\fIMail\fR is an extremely simple electronic mail program.  It can be used
+to send or receive email on a single 
+.MX 
+system, in which case it functions
+as user agent and local delivery agent.  
+If the flag \fIMAILER\fR is defined in \fImail.c\fR,
+it can also call a trans\%port agent to handle remote mail as well.
+No such agent is supplied with
+.MX .
+.PP
+When called by \fIuser\fR with no arguments, it examines the mailbox
+\fI/usr/spool/mail/user\fR, prints one message (depending on the \fB\(enr\fR
+flag), and waits for one of the following commands:
+.SP 1
+.HS
+.nf
+.ta 0.25i 1.25i
+	<newline>	Go to the next message
+	\(en	Print the previous message
+	!command	Fork off a shell and execute \fIcommand\fR
+	CTRL-D	Update the mailbox and quit (same as q)
+	d	Delete the current message and go to the next one
+	q	Update the mailbox and quit (same as CTRL-D)
+	p	Print the current message again
+	s [\fIfile\fR]	Save message in the named file
+	x	Exit without updating the mailbox
+.HS
+.PP
+.SP 1
+To send mail, the program is called with the name of the recipient as an
+argument.  The mail is sent, along with a postmark line containing the date.
+For local delivery, a file named after the recipient in the directory
+\fI/usr/spool/mail\fR must be writable.
+.PP
+If the directory \fI/usr/spool/mail\fR does not exist then the mail is
+dumped on the console, so that system programs have a way to notify
+a user on a system that does not have a mail spool.
+
+
+

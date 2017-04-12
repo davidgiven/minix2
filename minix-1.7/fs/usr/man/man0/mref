@@ -1,0 +1,27 @@
+.CD "mref \(en make listing and cross reference map of \s-2MINIX\s0"
+.SX "mref\fR [\fB\(endlmstx\fR] [\fB\(enp \fIn\fR] [\fB\(en\fIn\fR] \fIfile ..."
+.FL "\(end" "Do not produce definition file (global symbol table)"
+.FL "\(enl" "Do not produce listing"
+.FL "\(enm" "Multiple references on one line are cited only once"
+.FL "\(enp" "Set initial page number to \fIn\fR"
+.FL "\(ens" "Suppress line numbering between procedures"
+.FL "\(ent" "Generate output for \fItroff\fR"
+.FL "\(enx" "Do not produce the cross reference map"
+.FL "\(en\fIn" "Number of lines to print per page, default = 50"
+.EX "mref *.[\fIhc\fR]" "List and cross reference files \fI.h\fR and \fI.c\fR"
+.EX "mref \(en60 \(ent *.c" "Produce \fItroff\fR input at 60 lines/page"
+.EX "mref \(endx \(enp 100 *.c" "Listing only, first page is numbered 100"
+.PP
+In default mode, 
+.I mref
+produces three output files: a numbered listing of the input files
+(on standard output), a global symbol table (on \fIsymbol.out\fR),
+and a cross reference map to the global symbols (on \fIxref.out\fR).
+A global symbol in this context is one present in a #define, PUBLIC,
+PRIVATE, or SYMBOL statement (the latter being introduced to allow users
+to explicitly declare certain symbols as global).
+Any of the three outputs can be suppressed, or alternatively, be made
+suitable for input to \fItroff\fR for typesetting.
+
+
+

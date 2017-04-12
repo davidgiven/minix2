@@ -1,0 +1,19 @@
+.CD "astrip \(en remove symbols"
+.SX "astrip \fIfile\fR ..."
+.FL "\fR(none)"
+.EY "astrip kernel.out" "Removes the symbol table from \fIkernel.out\fR"
+.PP
+.I Astrip
+removes the symbol table ordinarily attached to
+ACK format object files.
+.I Astrip
+can only be used to remove the symbol table from a 
+.MX
+\fI.out\fR file. 
+It cannot be used to remove symbol tables from executables.
+To do that use
+.I strip
+instead.
+
+
+

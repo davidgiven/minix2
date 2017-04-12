@@ -1,0 +1,357 @@
+isalpha, isupper, islower, isdigit, isxdigit, isalnum, isspace, ispunct, isprint, isgraph, iscntrl, isascii - classify characters
+cc (0) - C compiler
+elle (0) - ELLE Looks Like Emacs
+mined (0) - MINIX editor
+pretty (0) - MINIX pretty printer
+unshar (0) - Remove files from a shell archive
+make (0) - a program for maintaining large programs
+adduser (0) - add a new user to the system
+fmt (0) - adjust line-length for paragraphs of text
+yes (0) - an endless stream of the same word
+ar, aal (0) - archivers
+as (0) - assembler
+backup (0) - backup files
+btoa (0) - binary to ascii conversion
+ctags (0) - build a tags file
+passwd, chfn, chsh (0) - change a login password, full name or shell
+chmod (0) - change access mode for files
+chgrp (0) - change group
+chmem (0) - change memory allocation
+chown (0) - change owner
+diskcheck (0) - check a disk for bad sectors
+pathchk (0) - check pathname
+clr (0) - clear the screen
+cron (0) - clock daemon
+elvis, vi, ex (0) - clone of the Berkeley vi editor
+cmp (0) - compare two files
+compress, uncompress, zcat (0) - compress a file using modified Lempel-Ziv coding
+srccrc (0) - compute CRC checksums of the entire source tree
+sum (0) - compute the checksum and block count of a file
+cat (0) - concatenate files and write them to stdout
+cdiff (0) - context diff
+M, U (0) - conveniently mount and unmount
+unexpand (0) - convert spaces to tabs
+expand (0) - convert tabs to spaces
+wc (0) - count characters, words, and lines in a file
+mkproto (0) - create a MINIX prototype file
+ln, clone (0) - create a link to a file
+mknod (0) - create a special file
+uud, uudecode (0) - decode a binary file encoded with uue
+uniq (0) - delete consecutive identical lines in a file
+dis88 (0) - disassembler [IBM]
+dd (0) - disk dumper
+de (0) - disk editor
+cksum (0) - display file checksum and size
+last (0) - display recent on-line session records
+tee (0) - divert stdin to a file
+ed (0) - editor
+uue, uuencode (0) - encode a binary file to ASCII (e.g., for mailing)
+expr (0) - evaluate experession
+which (0) - examine $PATH to see which file will be executed
+whereis (0) - examine system directories for a given file
+at, atrun (0) - execute commands at a later time
+true, false (0) - exit with the value true or false
+factor (0) - factor an integer less than 2**31
+cp, cpdir (0) - file copy
+find (0) - find files meeting a given condition
+fgrep (0) - fixed grep
+sync (0) - flush the cache to disk
+fold (0) - fold long lines
+width (0) - force all the lines of a file to a given width
+gather (0) - gather up the files in a directory for transmission
+cgrep (0) - grep and display context
+ncheck (0) - i-node to name converter
+dhrystone (0) - integer benchmark
+ic (0) - integer calculator
+dosdir (0) - list an MS-DOS directory [IBM]
+ls (0) - list the contents of a directory
+loadfont (0) - load a font into the video card
+loadkeys (0) - load a keyboard map into the keyboard driver
+login (0) - log into the computer
+ref (0) - look up a reference in a tags file
+look (0) - look up words in dictionary
+m4 (0) - macro processor
+mkdir (0) - make a directory
+mkfs (0) - make a file system
+file (0) - make a guess as to a file's type based on contents
+mkfifo (0) - make a named pipe
+mref (0) - make listing and cross reference map of MINIX
+mount (0) - mount a file system
+mv (0) - move or rename a file
+od (0) - octal dump
+fdisk (0) - partition a hard disk [IBM]
+paste (0) - paste multiple files together
+patch (0) - patches up a file from the original and a diff
+awk (0) - pattern matching language
+fsck, fsck1 (0) - perform file system consistency check
+update (0) - periodically write the buffer cache to disk
+prep (0) - prepare a text file for statistical analysis
+banner (0) - print a banner
+cal (0) - print a calendar
+pr (0) - print a file
+fortune (0) - print a fortune
+whatsnew (0) - print a newly modified file, marking changes
+strings (0) - print all the strings in a binary file
+spell (0) - print all words in a file not present in the dictionary
+whoami (0) - print current user name
+diff (0) - print differences between two files
+traverse (0) - print directory tree under the named directory
+du (0) - print disk usage
+inodes (0) - print i-node information
+comm (0) - print lines common to two sorted files
+who (0) - print list of currently logged in users
+anm (0) - print name list
+nm (0) - print name list
+date (0) - print or set the date and time
+printenv (0) - print out the current environment
+size (0) - print text, data, and bss size of a program
+echo (0) - print the arguments
+crc (0) - print the checksum of the file data
+termcap (0) - print the current termcap entry
+tty (0) - print the device name of this tty
+head (0) - print the first few lines of a file
+tail (0) - print the last few lines of a file
+printroot (0) - print the name of the root device on standard output
+id (0) - print the uid and gid
+pwd (0) - print working directory
+ps (0) - process status
+badblocks (0) - put a list of bad blocks in a file
+readfs (0) - read a MINIX file system
+readall (0) - read a device quickly to check for bad blocks
+dosread (0) - read a file from an MS-DOS diskette [IBM]
+readclock (0) - read the real time clock [IBM PC/AT and AMIGA]
+rz (0) - receive a file using the zmodem protocol
+recover (0) - recover files that have been removed.
+elvrec (0) - recover from a crash
+treecmp (0) - recursively list differences in two directory trees
+indent (0) - reformat the layout of a program
+calendar (0) - reminder service
+ifdef (0) - remove #ifdefs from a file
+rmdir (0) - remove a directory
+rm (0) - remove a file
+strip (0) - remove symbol table from executable file
+astrip (0) - remove symbols
+time (0) - report how long a command takes
+df (0) - report on free disk space and i-nodes
+asize (0) - report the size of an object file
+rev (0) - reverse the characters on each line of a file
+grep (0) - search a file for lines containing a given pattern
+cut (0) - select out columns of a file
+sz (0) - send a file using the zmodem protocol
+write (0) - send a message to a logged-in user
+kill (0) - send a signal to a process
+mail (0) - send and receive electronic mail
+stty (0) - set terminal parameters
+sh, ., break, case, cd, continue, eval, exec, exit, export, for, if, read, readonly, set, shift, trap, umask, wait, while (0) - shell
+shar (0) - shell archiver
+svc (0) - shell version control system
+sort (0) - sort a file of ASCII lines
+split (0) - split a large file into several smaller files
+sed (0) - stream editor
+ascii (0) - strip all the pure ASCII lines from a file
+basename (0) - strip off file prefixes and suffixes
+sleep (0) - suspend execution for a given number of seconds
+modem (0) - switch the modem and getty state
+uname, arch (0) - system info
+tar (0) - tape archiver
+su (0) - temporarily log in as superuser or another user
+test, [ (0) - test for a condition
+roff (0) - text formatter
+ttt (0) - tic tac toe
+tsort (0) - topological sort [IBM]
+kermit (0) - transfer a file using the kermit protocol
+tr (0) - translate character codes
+term (0) - turn PC into a dumb terminal [IBM]
+animals (0) - twenty-questions type guessing game about animals
+umount (0) - unmount a mounted file system
+touch (0) - update a file's time of last modification
+leave (0) - warn when it is time to go home
+doswrite (0) - write a file onto an MS-DOS diskette [IBM]
+bc (1) - An arbitrary precision calculator language
+cawf, nroff (1) - C version of the nroff-like, Amazingly Workable (text) Formatter
+bsfilt, colcrt (1) - a colcrt-like backspace filter
+acd (1) - a compiler driver
+ash, command, getopts, hash, jobs, local, return, setvar, unset (1) - a shell
+yacc (1) - an LALR(1) parser generator
+makewhatis (1) - build the whatis(5) database
+lp, lpd (1) - copy a file to the line printer
+man (1) - display online manual pages
+eject (1) - eject removable media
+flex, lex (1) - fast lexical analyzer generator
+flexdoc (1) - fast lexical analyzer generator
+format (1) - format a PC floppy diskette
+tget (1) - get termcap values
+whatis, apropos (1) - give single line descriptions for manual pages
+install (1) - install files
+isodir (1) - list ISO9660 or High Sierra directories
+isoinfo (1) - list an ISO9660 or High Sierra volume descriptor
+host (1) - look up host names using domain server
+mt (1) - magnetic tape control
+mixer (1) - manipulate mixer settings on a sound card
+playwave (1) - play an audio file in MicroSoft PCM wave format
+cdplay (1) - play audio compact disks
+isoread (1) - read a file in ISO9660 or High Sierra format
+recwave (1) - record an audio file in MicroSoft PCM wave format
+remsync (1) - remotely synchronize file trees
+hostaddr (1) - show ethernet address, IP address or hostname
+vol (1) - split input on or combine output from several volumes
+synctree (1) - synchronize directory trees.
+yap, more (1) - yet another pager
+utime (2) - change a file's last modified time
+brk, sbrk (2) - change data segment space allocation
+chmod (2) - change mode of file
+setgid (2) - change my group id
+chown (2) - change owner and group of a file
+chroot (2) - change root directory
+chdir (2) - change working directory
+close (2) - close a file descriptor
+reboot (2) - close down the system or reboot
+ioctl (2) - control device
+creat (2) - create a new file or rewrite an existing one
+fork (2) - create a new process
+pipe (2) - create an interprocess channel
+setsid, getpgrp (2) - create process group, get process group id
+unlink (2) - delete a link to a file
+access (2) - determine accessibility of a file
+isatty (2) - does this descriptor refer to a terminal
+dup (2) - duplicate an open file descriptor
+exec, execl, execv, execle, execve, execlp, execvp (2) - execute a file
+stat, fstat (2) - get file status
+times (2) - get process and child process times
+getpid (2) - get process id
+time (2) - get time
+getuid (2) - get uid
+intro (2) - introduction to system calls and error numbers
+link (2) - link to a file
+mknod (2) - make a directory, or a special or ordinary file
+dup2 (2) - make another descriptor
+sigaction, signal (2) - manage signal state and handlers
+sigprocmask (2) - manipulate the signal mask
+fcntl (2) - miscellaneous file descriptor control functions
+lseek (2) - move read/write file pointer
+open (2) - open for reading or writing
+fstat (2) - read an inode
+read (2) - read from file
+sigpending (2) - report pending signals
+kill (2) - send a signal to a process or a group of processes
+alarm (2) - set a process alarm clock
+umask (2) - set the default file protection mask
+stime (2) - set time
+setuid, setgid (2) - set user and group IDs
+signal (2) - specify what to do upon receipt of a signal
+pause (2) - suspend process until signal
+sigsuspend (2) - suspend until signalled
+exit, _exit (2) - terminate process
+sync (2) - update super-block
+wait (2) - wait for a child to terminate
+getegid (2) - what is my effective group id
+geteuid (2) - what is my effective user id
+getppid (2) - what is my parent's process id
+getgid (2) - what is my real group id
+write (2) - write to a file
+oneC_sum (3) - One's complement internet checksum
+setbuf, setvbuf (3) - assign buffering to a stream
+fread, fwrite (3) - binary input/output
+putenv (3) - change or add value to environment
+termios, tcgetattr, tcsetattr, cfgetispeed, cfgetospeed, cfsetispeed, cfsetospeed, tcsendbreak, tcdrain, tcflush, tcflow (3) - change terminal attributes
+rename (3) - change the name of a file
+fclose, fflush (3) - close or flush a stream
+editline (3) - command-line editing library with history
+regcmp, regex (3) - compile and execute regular expression
+ctime, localtime, gmtime, asctime (3) - convert date and time to string
+scanf, fscanf, sscanf (3) - convert formatted input
+toascii (3) - convert to ASCII
+tolower (3) - convert to lower case
+toupper (3) - convert to upper case
+directory, opendir, readdir, rewinddir, closedir, telldir, seekdir (3) - directory routines
+ttyname (3) - file descriptor to terminal device name
+ctermid (3) - generate file name for terminal
+gets, fgets (3) - get a string from a stream
+cuserid (3) - get character login name of the user
+getc, getchar, fgetc, getw (3) - get character or word from a stream
+getdents (3) - get directory entries
+getpw (3) - get name from UID
+g_h_b_n, gethostbyname, gethostbyaddr, gethostent, sethostent, endhostent, herror (3) - get network host entry
+getopt (3) - get option letter from argument vector
+getgrent, getgrnam, getgrgid, setgrent, endgrent, setgrfile (3) - group file routines
+hton, htons, htonl, ntohs, ntohl (3) - host to network byte order conversion
+popen, pclose (3) - initiate pipe to/from a process
+getttyent, getttynam, setttyent, endttyent (3) - interface to /etc/ttytab
+intro (3) - introduction to subroutines and libraries
+lrand (3) - lehmer random number generator
+malloc, free, realloc, calloc (3) - main memory allocator
+mktemp (3) - make a unique file name
+sigset, sigaddset, sigdelset, sigemptyset, sigfillset, sigismember (3) - manipulate signal sets
+setjmp, longjmp (3) - non-local goto
+crypt (3) - one-way password encryption function
+fopen, freopen, fdopen (3) - open a stream
+getpwent, getpwnam, getpwuid, setpwent, endpwent, setpwfile (3) - password file routines
+printf, fprintf, sprintf (3) - print formatted output
+puts, fputs (3) - put a string on a stream
+putc, putchar, fputc, putw (3) - put character or word on a stream
+qsort (3) - quicker sort
+getpass (3) - read a password
+lockf (3) - record locking on files
+fseek, rewind, ftell (3) - reposition a file pointer in a stream
+resolver, res_query, res_search, res_mkquery, res_send, res_init, dn_comp, dn_expand (3) - resolver routines
+abs (3) - return integer absolute value
+logname (3) - return login name of user
+getenv (3) - return value for environment name
+curses (3) - screen/window management library
+stdio (3) - standard buffered input/output package
+rand (3) - standard random number generator
+ferror, feof, clearerr, fileno (3) - stream status inquiries
+lge, lgt, lle, llt (3) - string comparison intrinsic functions
+sleep (3) - suspend execution for interval
+perror, errno, sys_errlist, sys_nerr (3) - system error messages
+ttyslot, fttyslot (3) - utmp slot number
+ip, eth, psip, udp, tcp (4) - Internet Protocol server devices and definitions
+sd, st, sg (4) - SCSI hard disk / tape / generic
+dev (4) - device files in /dev
+fd (4) - floppy disk
+lp (4) - line printer
+mtio (4) - magnetic tape commands
+console, keyboard, log (4) - system console
+tty, termios (4) - terminals
+hd (4) - winchester hard disk
+resolv.conf (5) - Domain Name System resolver configuration
+TZ (5) - Time zone environment variable
+whatis (5) - database of online manual pages
+dir (5) - directory layout
+ethers (5) - ethernet address to hostname database
+hosts (5) - hostname to IP address database
+keymap (5) - keyboard maps
+fstab, mtab (5) - list of file systems to mount, mounted file system table.
+utmp, wtmp (5) - logged in users, login and logout history
+resolver (5) - resolver configuration file
+ttytab (5) - table of login terminals
+rhosts, hosts.equiv (5) - trusted remote users or hosts
+passwd, group, shadow (5) - user and group databases, shadow passwords
+hier (7) - file system hierarchy
+man (7) - nroff macro package for manual pages
+ascii (7) - the ASCII character set.
+inet (8) - TCP/IP server
+halt (8) - abruptly stop the system
+checkhier (8) - check the directory hierarchy
+add_route (8) - configure IP routing.
+ifconfig (8) - configure a TCP/IP device
+boot (8) - from power on to the login prompt
+shutdown (8) - graciously close the system down
+init (8) - grandparent of all processes
+usage (8) - installing and using Minix
+irdpd (8) - internet router discovery protocol daemon
+repartition (8) - load a partition table
+monitor, edparams (8) - load and start Minix, modify boot parameters
+mkdist (8) - make a Minix distribution
+installboot (8) - make a device bootable
+partition (8) - make a partition table
+MAKEDEV, DESCRIBE (8) - make/describe device files
+nonamed (8) - not a name daemon, but acts like one
+part (8) - partition table editor
+pwdauth (8) - password authentication program
+reboot (8) - reboot the system immediately
+rarpd (8) - reverse address resolution protocol daemon
+s_n_d, set_net_default (8) - select the default TCP/IP network
+pr_routes (8) - show IP routing.
+getty (8) - system login banner
+screendump (8) - write current console screen to standard output

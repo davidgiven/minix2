@@ -1,0 +1,15 @@
+.CD "whatsnew \(en print a newly modified file, marking changes"
+.SX "whatsnew\fR [\fB\(en\fIn\fR] \fIfile.c file.c.cdif"
+.FL "\(en\fIn\fR" "Output line length"
+.EX "whatsnew file.c file.c.cdif" "Print \fIfile.c\fR with changes marked"
+.EX "whatsnew \(en70 file.c file.c.cdif" "Same as above, but with 70 col line"
+.PP
+It commonly occurs that \fIcdif\fRs are posted to USENET.
+After installing a \fIcdif\fR file, it is sometimes desirable to print out
+the new file, with the changes marked on it.
+\fIWhatsnew\fR does precisely this, with the changes + and ! printed in the
+right-hand margin.
+
+
+
+.SP 0.6

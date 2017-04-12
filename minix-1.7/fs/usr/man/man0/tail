@@ -1,0 +1,18 @@
+.CD "tail \(en print the last few lines of a file"
+.SX "tail\fR [\fB\(enc \fIn\fR] [\fB\(enf] [\fB\(enn \fIn\fR] [\fIfile\fR] ..."
+.FL "\(enc" "The count refers to characters"
+.FL "\(enf" "On FIFO or special file, keep reading after EOF"
+.FL "\(enn" "The count refers to lines"
+.EX "tail \(enn 6" "Print last 6 lines of \fIstdin\fR"
+.EX "tail \(enc 20 file" "Print the last 20 characters of \fIfile\fR"
+.EX "tail \(enn 1 file1 file2" "Print last line of two files"
+.EX "tail \(enn +8 file" "Print the tail starting with line 8"
+.PP
+The last few lines of one or more files are printed.
+The default count is 10 lines.
+The default file is \fIstdin\fR.
+If the value of \fIn\fR for the \fB\(enc\fR or \fB\(enn\fR flags starts with
+a + sign, counting starts at the beginning, rather than the end of the file.
+
+
+

@@ -1,0 +1,15 @@
+.CD "elvrec \(en recover from a crash"
+.SX "elvrec \fR[\fIpreservedfile\fR [\fInewfile\fR]]"
+.FL "\fR(none)"
+.EX "elvrec prog.c" "Recover \fIprog.c\fR
+.EX "elvrec prog.c savedprog.c" "Recover under a new name
+.PP
+\fIElvrec\fR is used to recover an edit session after a crash.
+Both \fIelvis\fR and \fIex\fR keep scratch files in \fI/usr/tmp\fR.
+After an editor crash, this information is used to reconstruct the file.
+If \fIelvrec\fR is called with no file name, it expects one of these
+temporary files on \fIstdin\fR.
+
+
+
+.SP 2

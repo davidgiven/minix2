@@ -1,0 +1,17 @@
+.CD "sed \(en stream editor"
+.SX "sed\fR [\fB\(enegn\fR]\fR [\fB\(enf \fIscript_file\fR]\fR [\fIedit_script\fR] [\fIfile\fR]"
+.FL "\(ene" "Accept multiple commands commands on the commands line"
+.FL "\(enf" "The following argument contains the edit script"
+.FL "\(eng" "Set the global flag on all substitute commands"
+.FL "\(enn" "Only output selected lines"
+.EX "sed \(enf script <file" "Run a sed script on \fIfile\fR"
+.EX "sed \(fm/pig/s//hog/g\(fm <file" "Replace \fIpig\fR by \fIhog\fR in the file"
+.PP
+\fISed\fR is a stream editor.
+It takes an edit script either from its argument or a file, and performs
+an edit session on a named file or \fIstdin\fR, producing output 
+on \fIstdout\fR.
+
+
+
+.SP 1

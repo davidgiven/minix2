@@ -1,0 +1,18 @@
+.CD "last \(en display recent on-line session records"
+.SX "last\fR [\fB\(enf \fIfile\fR]\fR [\fB\(enr\fR] [\fB\(en\fIn\fR] [\fIname\fR] [\fItty\fR] ..."
+.FL "\(enf" "Use \fIfile\fR instead of /usr/adm/wtmp"
+.FL "\(enr" "Search backwards only to last reboot"
+.FL "\(en\fIn\fP" "Print a maximum of \fIn\fR lines"
+.EX "last reboot" "When was the system last rebooted?"
+.EX "last ast" "When was the last login for ast?"
+.EX "last \(en10 tty00 tty01" "Display last 10 logins on tty00 or tty01"
+.PP
+.I Last
+Searches backward through the login administration file (default is
+\fI/usr/adm/wtmp\fR), printing information about previous logins and
+reboots.
+During a long search, the SIGQUIT signal (CTRL-\\) causes \fIlast\fR to 
+display how far back it has gone; it then continues. 
+
+
+

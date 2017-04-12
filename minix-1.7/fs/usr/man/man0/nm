@@ -1,0 +1,21 @@
+.CD "nm \(en print name list"
+.SX "nm\fR [\fB\(endgnopru\fR]\fR [\fIfile\fR] ..."
+.FL "\(end" "Print the offsets in decimal instead of in hex"
+.FL "\(eng" "Print only external symbols"
+.FL "\(enn" "Sort numerically rather than alphabetically"
+.FL "\(eno" "Prepend file name to each line rather than only once"
+.FL "\(enp" "Do not sort, print in symbol-table order"
+.FL "\(enr" "Sort in reverse order"
+.FL "\(enu" "Print only undefined symbols"
+.EX "nm \(enn a.out" "Print all symbols in numerical order"
+.EX "nm \(endg a.out" "Print globals alphabetically in decimal"
+.PP
+\fINm\fR prints the symbol table of executable files when it is available.
+If no file is given, the symbols in \fIa.out\fR are used.  
+The format of the table 
+is somewhat compatible with the one produced  by \fIasld\fR when used with 
+the \fB\(ens\fR option. The symbol table can be added with \fIast\fR.  
+Assembly language files do not have symbol tables.
+
+
+

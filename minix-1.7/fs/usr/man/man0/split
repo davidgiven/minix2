@@ -1,0 +1,14 @@
+.CD "split \(en split a large file into several smaller files"
+.SX "split\fR [\fB\(en\fIn\fR]\fR [\fIfile \fR[\fIprefix\fR]\fR]"
+.FL "\(en\fIn\fP" "Number of lines per piece (default: 1000)"
+.EX "split \(en200 file" "Split \fIfile\fP into pieces of 200 lines each"
+.EX "split file z" "Split \fIfile\fP into \fIzaa\fP, \fIzab\fP, etc."
+.PP
+.I Split 
+reads \fIfile\fP and writes it out in \fIn\fP-line pieces.
+By default, the pieces are called \fIxaa\fP, \fIxab\fP, etc.
+The optional second argument can be used to provide an alternative
+prefix for the output file names.
+
+
+

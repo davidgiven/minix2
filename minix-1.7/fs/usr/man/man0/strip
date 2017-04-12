@@ -1,0 +1,11 @@
+.CD "strip \(en remove symbol table from executable file"
+.SX "strip\fR [\fIfile\fR] ..."
+.FL "\fR(none)"
+.EY "strip a.out" "Remove symbols from \fIa.out\fR"
+.PP
+For each file argument, \fIstrip\fR removes the symbol table.  
+Strip makes a copy of the file being stripped, so links are lost.
+
+
+
+.SP 1.5

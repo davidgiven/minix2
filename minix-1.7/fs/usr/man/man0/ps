@@ -1,0 +1,51 @@
+.CD "ps \(en process status"
+.SX "ps \fR[\fB\(enalxU\fR] [\fBkernel mm fs\fR]"
+.FL "\(ena" "Print all processes with controlling terminals"
+.FL "\(enl" "Give long listing"
+.FL "\(enx" "Include processes without a terminal"
+.EX "ps \(enaxl" "Print all processes and tasks in long format"
+.PP
+\fIPs\fR prints the status of active processes.  Normally only the caller's own
+processes are listed in short format (the PID, TTY, TIME and CMD fields as
+explained below).  The long listing contains:
+.HS
+.ta 0.5i 1.0i
+  F	Kernel flags:
+		001: free slot
+		002: no memory map
+		004: sending;
+		010: receiving
+		020: inform on pending signals
+		040: pending signals
+		100: being traced.
+.HS
+  S
+	State:
+		R: runnable
+		W: waiting (on a message)
+		S: sleeping (i.e.,suspended on MM or FS)
+		Z: zombie
+		T: stopped
+.HS
+  UID, PID, PPID, PGRP
+	The user, process, parent process and process group ID's.
+.HS
+  SZ
+	Size of the process in kilobytes.
+.HS
+  RECV
+	Process/task on which a receiving process is waiting or sleeping.
+.HS
+  TTY	
+	Controlling tty for the process.
+.HS
+  TIME
+	Process' cumulative (user + system) execution time.
+.HS
+  CMD	Command line arguments of the process.
+.HS
+.PP
+The files \fI/dev/{mem,kmem}\fR are used to read the system tables and command
+line arguments from.  Terminal names in \fI/dev\fR are used to generate the 
+mnemonic names in the TTY column, so \fIps\fR is independent of terminal naming
+conventions.

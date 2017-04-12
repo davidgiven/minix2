@@ -1,0 +1,42 @@
+.CD "fdisk \(en partition a hard disk [IBM]"
+.SX "fdisk\fR [\fB\(enh\fIm\fR]\fR [\fB\(ens\fIn\fR]\fR [\fIfile\fR]"
+.FL "\fB\(enh" "Number of disk heads is \fIm\fR"
+.FL "\fB\(ens" "Number of sectors per track is \fIn\fR"
+.EX "fdisk /dev/hd0" "Examine disk partitions"
+.EX "fdisk \(enh9 /dev/hd0" "Examine disk with 9 heads"
+.PP
+When \fIfdisk\fR starts up, it reads in the partition table and displays 
+it.
+It then presents a menu to allow the user to modify partitions, store the
+partition table on a file, or load it from a file.  Partitions can be marked
+as 
+.MX ,
+DOS or other, as well as active or not.
+Using \fIfdisk\fR is self-explanatory.  
+However, be aware that
+repartitioning a disk will cause information on it to be lost.  
+Rebooting the system \fIimmediately\fR 
+is mandatory after changing partition sizes and parameters.
+.MX , 
+\&\s-2XENIX\s0, \s-2PC-IX\s0, and \s-2MS-DOS\s0 all have different 
+partition numbering schemes.
+Thus when using multiple systems on the same disk, be careful.
+.PP
+Note that
+.MX ,
+unlike
+.SY MS-DOS ,
+cannot access the last sector in a partition with an odd number of sectors.
+The reason that odd partition sizes do not cause a problem with
+\s-2MS-DOS\s0 is that \s-2MS-DOS\s0 allocates disk space in units of
+512-byte sectors, whereas 
+.MX
+uses 1K blocks.
+\fIFdisk\fR has a variety of other features that can be seen by typing \fIh\fR.
+.PP
+.I Fdisk
+normally knows the geometry of the device by asking the driver.  You can use
+the \fB\(enh\fP and \fB\(ens\fP options to override the numbers found.
+
+
+

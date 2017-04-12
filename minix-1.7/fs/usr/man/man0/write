@@ -1,0 +1,14 @@
+.CD "write \(en send a message to a logged-in user"
+.SX "write\fR [\fB\(encv\fR] \fIuser\fR [\fItty\fR]
+.FL "\(enc" "Use cbreak mode"
+.FL "\(env" "Verbose mode"
+.EX "write ast" "Send a message to ast"
+.EX "write ast tty00" "Send a message to ast on tty00"
+.PP
+\fIWrite\fR lets a user send messages to another logged-in user.  
+Lines typed by the user appear on the other user's screen a line at a time 
+(a character at a time in the case of cbreak mode).  
+The file \fI/usr/adm/wtmp\fR is searched to determine which tty to send to. 
+If the user is logged onto more than one terminal, the \fItty\fR argument
+selects the terminal.  Type CTRL- D to terminate the command.
+Use ! as a shell escape.

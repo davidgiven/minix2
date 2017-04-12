@@ -1,0 +1,23 @@
+.CD "paste \(en paste multiple files together"
+.SX "paste\fR [\fB\(ens\fR]\fR [\fB\(end\fI list\fR] \fIfile..."
+.FL "\(end" "Set delimiter used to separate columns to \fIlist\fR.
+.FL "\(ens" "Print files sequentially, file \fIk\fR on line \fIk\fR.
+.EX "paste file1 file2" "Print \fIfile1\fR in col 1, \fIfile2\fR in col 2"
+.EX "paste \(ens f1 f2" "Print \fIf1\fR on line 1 and \fIf2\fR on line 2"
+.EX "paste -d : file1 file2" "Print the lines separated by a colon"
+.PP
+\fIPaste\fR concatenates corresponding lines of the given input files
+and writes them to standard output. The lines of the different files
+are separated by the delimiters given with the option \(ens\fR. If
+no list is given, a tab is substituted for every linefeed, except the last one.
+If end-of-file is hit on an input file, subsequent lines are empty.
+Suppose a set of \fIk\fR files each has one word per line.  
+Then the \fIpaste\fR output will have \fIk\fR columns, 
+with the contents of file \fIj\fR in column \fIj\fR.  
+If the \fB\(ens\fR flag is given, then the first
+file is on line 1, the second file on line 2, etc.  
+In effect, \fB\(ens\fR turns the output sideways.
+.PP
+If a list of delimiters is given, they are used in turn.  The C escape
+sequences \\n, \\t, \\\\, and \\0 are used for linefeed, tab, backslash, and
+the null string, respectively.

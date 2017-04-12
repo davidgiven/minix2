@@ -1,0 +1,10 @@
+.CD "sleep \(en suspend execution for a given number of seconds"
+.SX "sleep \fIseconds"
+.FL "\fR(none)"
+.EY "sleep 10" "Suspend execution for 10 sec."
+.PP
+The caller is suspended for the indicated number of seconds.
+This command is typically used in shell scripts.
+
+
+

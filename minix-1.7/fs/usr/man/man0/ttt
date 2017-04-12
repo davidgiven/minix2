@@ -1,0 +1,11 @@
+.CD "ttt \(en tic tac toe"
+.SX "ttt"
+.FL "\fR(none)"
+.EY "ttt~~~" "Start the game"
+.PP
+This program allows the user to engage in a game of tic tac toe (noughts and
+crosses) with the computer.
+The program uses the alpha-beta algorithm, so the user had better be sharp.
+
+
+

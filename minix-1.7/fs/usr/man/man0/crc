@@ -1,0 +1,15 @@
+.CD "crc \(en print the checksum of the file data"
+.SX "crc \fIfile\fR ..."
+.FL "\fR(none)\fR"
+.EY "crc *.c" "Print checksums of all the C programs"
+.PP
+The checksum of each argument is computed and printed, along with the file
+length and its name, one file per line.
+This program is useful for seeing if a file transmitted to another machine
+has arrived correctly.
+It is conceptually similar to \fIsum\fR, except that it uses a stronger 
+checksum algorithm and also prints the length.
+
+
+
+.SP 1

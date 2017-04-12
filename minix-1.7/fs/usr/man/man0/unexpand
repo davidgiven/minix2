@@ -1,0 +1,12 @@
+.CD "unexpand \(en convert spaces to tabs"
+.SX "unexpand\fR [\fB\(ena\fR]
+.FL "\(ena" "All spaces are unexpanded"
+.EY "unexpand oldfile >newfile" "Convert leading spaces to tabs"
+.PP
+\fIUnexpand\fR replaces spaces in the named files with tabs.
+If no files are listed, \fIstdin\fR is given.
+The \fB\(ena\fR flag is used to force all sequences of spaces to be
+expanded, instead of just leading spaces (the default).
+
+
+

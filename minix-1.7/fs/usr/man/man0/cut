@@ -1,0 +1,33 @@
+.CD "cut \(en select out columns of a file"
+.SX "cut [ \fB \(enb \fR|\fB \(enc\fR] \fIlist\fR [\fIfile...\fR]"
+.SX "cut \(enf \fIlist\fR [\fB\(end \fIdelim\fR] [\fB \(ens\fR]
+[\fIfile...\fR]" 
+.FL "\(enb" "Cut specified bytes"
+.FL "\(enc" "Select out specific characters"
+.FL "\(end" "Change the column delimiter to \fIdelim\fR"
+.FL "\(enf" "Select out specific fields that are separated by the
+delimiter character ( see \fIdelim\fR)"
+.FL "\(eni" "Runs of delimiters count as one"
+.FL "\(ens" "Suppres lines with no delimiter characters, when used
+with the \(enf option. Lines with no delimiters are passwd through
+untouched"
+.EX "cut \(enf 2 file" "Extract field 2"
+.EX "cut \(enc 1\(en2,5 file" "Extract character columns 1, 2, and 5"
+.EX "cut \(enc 1\(en5,7\(en file" "Extract all columns except 6"
+.PP
+\fICut\fR extracts one or more fields or columns from a file and writes them on
+standard output.
+If the \fB\(enf\fR flag is used, the fields are separated by a delimiter 
+character, normally a tab, but can be changed using the \fB\(end\fR flag.
+If the \fB\(enc\fR flag is used, specific columns can be specified.
+The list can be comma or BLANK separated. The \fB\(enf\fR and
+\fB\(enc\fR flags  are mutually exclusive.
+Note: The POSIX1003.2 standard requires the option \(enb to cut out
+specific bytes in a file. It is intended for systems with multi byte
+characters (e.g. kanji), since MINIX uses only one byte characters,
+this option is equivalent to \(enc. For the same reason, the option
+\(enn has no effect and is not listed in this manual page.
+
+
+
+

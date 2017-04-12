@@ -1,0 +1,14 @@
+.CD "M, U \(en conveniently mount and unmount"
+.SX "M \fIdevice\fR [\fB\(enr\fR]"
+.SX "U \fIdevice\fR"
+.FL "\(enr" "Mount read-only"
+.EX "M root" "Mount the RAM image on /root"
+.EX "M 0" "Mount /dev/fd0 on /fd0"
+.EX "U fd1" "Unmount /dev/fd1 from /fd1"
+.PP
+\fIM\fR and \fIU\fR allow easy mounting and unmounting of a device by using
+only an abbreviated device name or keyword.  Special keywords are
+\fBroot\fR, \fBtmp\fR, and \fBusr\fR for the three hard disk partitions
+Minix runs in.  Floppy devices are mounted on \fB/fd0\fR or \fB/fd1\fR.  You
+can use \fB0\fR and \fB1\fR instead of \fBfd0\fR and \fBfd1\fP.  A device it
+doesn't know about is mounted on \fB/mnt\fR.

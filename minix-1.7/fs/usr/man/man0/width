@@ -1,0 +1,13 @@
+.CD "width \(en force all the lines of a file to a given width"
+.SX "width\fR [\fB\(en\fIn\fR [ \fIinfile\fR [\fIoutfile\fR]\fR
+.FL "\(en\fIn\fR" "Outline line size"
+.EX "width \(en60 x y" "Copy \fIx\fR to \fIy\fR, force lines to 60 cols"
+.EX "width x" "Copy default (80) column lines to \fIstdout\fR"
+.PP
+The input file is copied to the output file.
+All lines are forced to a given size (default: 80 columns) by padding with
+spaces or truncating.
+Tabs are expanded to spaces.
+
+
+

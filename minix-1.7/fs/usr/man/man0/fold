@@ -1,0 +1,13 @@
+.CD "fold \(en fold long lines"
+.SX "fold\fR [\fB\(en\fIn\fR]\fR [\fIfile\fR] ..."
+.FL "\(en\fIn\fR" "How long should the output lines be"
+.EX "fold \(en60" "Fold \fIstdin\fR to 60 characters"
+.EX "fold file" "Fold \fIfile\fP to 80 characters"
+.PP
+\fIFold\fR takes copies its input from the named file (or \fIstdin\fR,
+if none is specified) to standard output.
+However, lines longer than the given maximum (default 80) are broken
+into multiple lines of the maximum length by inserting new line characters.
+
+
+

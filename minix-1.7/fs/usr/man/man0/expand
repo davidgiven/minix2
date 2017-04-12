@@ -1,0 +1,12 @@
+.CD "expand \(en convert tabs to spaces" 
+.SX "expand\fR [\fB\(en\fIt1,t2, ...\fR]\fR [\fIfile\fR]
+.FL "\(en\fIt\fR" "Tab stop positions"
+.EY "expand \(en16,32,48,64" "Expand \fIstdin\fR with tabs every 16 columns"
+.PP
+\fIExpand\fR replaces tabs in the named files with the equivalent numbers
+of spaces.  If no files are listed, \fIstdin\fR is given.  If only one
+tab is given, the rest are multiples of it.  The default is a tab every 8
+spaces.
+
+
+

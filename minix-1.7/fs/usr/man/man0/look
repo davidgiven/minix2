@@ -1,0 +1,16 @@
+.CD "look \(en look up words in dictionary"
+.SX "look\fR [\fB\(enf\fR] \fIprefix\fR[\fB/\fIsuffix\fR]\fR [\fIdictionary\fR]"
+.FL "\(enf" "Fold upper case letters to lower case"
+.EX "look ard" "Print words starting with \fIard\fR"
+.EX "look /bing" "Print words ending with \fIbing\fR"
+.EX "look \(enf f/ar" "Print words starting with \fIf\fR, ending with \fIar\fR"
+.PP
+\fILook\fR takes a prefix and/or suffix and searches \fI/usr/lib/dict/words\fR
+or the specified dictionary for all words with that match.
+The words are printed.
+The \fB\(enf\fR flag causes all upper case letters to be treated as lower
+case.
+
+
+
+.SP 1.6

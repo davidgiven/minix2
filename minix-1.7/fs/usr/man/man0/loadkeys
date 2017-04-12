@@ -1,0 +1,16 @@
+.CD "loadkeys \(en load a keyboard map into the keyboard driver"
+.SX "loadkeys \fImapfile"
+.FL "\fR(none)"
+.EY "loadkeys spanish.map" "Load a map for a Spanish keyboard"
+.PP
+.I Loadkeys
+changes the key number to character mapping.  This is necessary for national
+keyboards that have different symbols on the keys that the standard U.S.
+English keyboard.  The file
+.I /etc/keymap
+is the first thing loaded by
+.I /etc/rc
+at boot time if it exists.
+
+
+

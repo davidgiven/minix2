@@ -1,0 +1,10 @@
+.CD "tty \(en print the device name of this tty"
+.SX "tty \fR[\fB\(ens\fR]"
+.FL "\(ens" "Silent mode, only the exit status is affected."
+.EY "tty~~~" "Print the tty name"
+.PP
+Print the name of the controlling tty. If the flag \fB\(ens\fR is given,
+\fItty\fR is equivalent to the call \fBtest \(ent 0\fR.
+
+
+

@@ -1,0 +1,14 @@
+.CD "basename \(en strip off file prefixes and suffixes"
+.SX "basename \fIfile\fR [\fIsuffix\fR]
+.FL "\fR(none)"
+.EX "basename /user/ast/file.c" "Strips path to yield \fIfile.c\fP"
+.EX "basename /user/file.c .c" "Strips path and \fI.c\fP to yield \fIfile\fP"
+.PP
+The initial directory names (if any) are removed yielding the name of the
+file itself.
+If a second argument is present, it is interpreted as a suffix and is
+also stripped, if present.
+This program is primarily used in shell scripts.
+
+
+

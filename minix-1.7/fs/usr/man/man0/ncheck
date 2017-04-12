@@ -1,0 +1,14 @@
+.CD "ncheck \(en i-node to name converter"
+.SX "ncheck\fR [\fB\(eni\fI numbers\fR] [\fB\(ena\fR] [\fB\(ens\fR] \fIfile_system\fR"
+.FL "\(ena" "List all files, even . and .."
+.FL "\(eni" "Followed by a list of i-nodes"
+.FL "\(ens" "List only special and setuid files"
+.EX "ncheck \(en /dev/fd0" "List everything on \fI/dev/fd0\fR"
+.EX "ncheck \(eni 10,15 /dev/fd0" "List i-nodes 10 and 15 on \fI/dev/fd0\fR"
+.PP
+Sometimes one knows about an i-node number and wants to find the file
+name that goes with it.  This program makes that mapping.
+The default is to list everything on the device, but the \fB\(eni\fR
+flag restricts the list to specified i-nodes and the \fB\(ens\fR flag
+restricts it to special files and setuid files (to look for possible
+security violations).

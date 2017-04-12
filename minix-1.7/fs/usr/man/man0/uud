@@ -1,0 +1,17 @@
+.CD "uud, uudecode \(en decode a binary file encoded with uue"
+.SX "uud\fR [\fB\(enn\fR]\fR [\fB\(ens \fIsrcdir\fR] [\fB\(ent \fIdstdir/\fR] \fIfile"
+.FL "\(enn" "Do not verify checksums"
+.FL "\(ens" "Name of directory where \fI.uue\fR file is"
+.FL "\(ent" "Name of directory where output goes"
+.EX "uud file.uue " "Re-create the original file"
+.EX "uud \(en <file.uue" "The \(en means use \fIstdin\fR"
+.PP
+\fIUud\fR decodes a file encoded with \fIuue\fR or
+.UX
+\fIuuencode\fR.
+The decoded file is given the name that the original file had.  
+The name information is part of the encoded file.
+Mail headers and other junk before the encoded file are skipped.
+
+
+

@@ -1,0 +1,45 @@
+.CD "find \(en find files meeting a given condition"
+.SX "find \fIdirectory \fIexpression"
+.FL "\fR(none)"
+.EX "find /  \(enname a.out \(enprint~~~~~~~~~~~~~~~~" "Print all \fIa.out\fR paths"
+.EX "find /usr/ast ! \(ennewer f \(enok rm {} \\\\\^;~~~~~~~~~~" "Ask before removing"
+.EX "find /usr \(ensize +20 \(enexec mv {} /big \\\\\^;~~~~~" "move files > 20 blks"
+.EX "find / \( \(enname a.out \(eno \(enname \(fm*.o\(fm \) \(enexec rm {}\\\\\^;" "2 conds"
+.PP
+\fIFind\fR descends the file tree starting at the given directory checking
+each file in that directory and its subdirectories against a predicate.
+If the predicate is true, an action is taken.  The predicates may be
+connected by \fB\(ena\fR (Boolean and), \fB\(eno\fR (Boolean or) and !
+(Boolean negation).
+Each predicate is true under the conditions specified below.  The integer 
+\fIn\fR may also be +\fIn\fR to mean any value greater than \fIn\fR, 
+\fI\(enn\fR to mean any value less than
+\fIn\fR, or just \fIn\fR for exactly \fIn\fR.
+.HS
+.ta 0.25i 1.0i
+.nf
+	\(enname s	true if current filename is \fIs\fR (include shell wild cards)
+	\(ensize n	true if file size is \fIn\fR blocks
+	\(eninum n	true if the current file's i-node number is \fIn\fR
+	\(enmtime n	true if modification time relative to today (in days) is \fIn\fR
+	\(enlinks n	true if the number of links to the file is \fIn\fR
+	\(ennewer f	true if the file is newer than \fIf\fR
+	\(enperm n	true if the file's permission bits = \fIn\fR (\fIn\fR is in octal)
+	\(enuser u	true if the uid = \fIu\fR (a numerical value, not a login name)
+	\(engroup g	true if the gid = \fIg\fR (a numerical value, not a group name)
+	\(entype x	where \fIx\fR is \fBbcdfug\fR (block, char, dir, regular file, setuid, setgid)
+	\(enxdev	do not cross devices to search mounted file systems
+.fi
+.HS
+Following the expression can be one of the following, telling what to do
+when a file is found:
+.HS
+.nf
+	\(enprint	print the file name on standard output
+	\(enexec	execute a \s-2MINIX\s0 command, {} stands for the file name
+	\(enok	prompts before executing the command
+.fi
+.HS
+
+
+

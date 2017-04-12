@@ -1,0 +1,30 @@
+.CD "ifdef \(en remove #ifdefs from a file"
+.SX "ifdef \fR[\fB\(ent\fR] [\fB\(end\fIsymbol\fR] [\fB\(enD\fIsymbol\fR] [\fB\(enU\fIsymbol\fR] [\fB\(enI\fIsymbol\fR] [file]"
+.FL "\(enD" "Define symbol permanently"
+.FL "\(enI" "Ignore symbol"
+.FL "\(enU" "Undefine symbol permanently"
+.FL "\(end" "Define symbol. It may be #undef'ed later"
+.FL "\(ent" "Produce a table of the symbols on \fIstdout\fR"
+.EX "ifdef \(enDUNIX file.c >newfile.c" "Define \fIUNIX\fR"
+.EX "ifdef \(enD_MINIX \(enUDOS <x.c >y.c "Define \fI_MINIX\fR, undefine \fIDOS\fR"
+.PP
+\fIIfdef\fR
+allows conditional code [ #ifdef ... #endif ]
+to be selectively removed from C files, but at the same time leaving
+all other C preprocessor commands intact such as #define, #include etc.
+Input to
+.I ifdef
+is either the file named as the last argument, or \fIstdin\fR if no file
+is named.
+Output goes to \fIstdout\fR.
+.PP
+Symbols may be defined with the \fB\(end\fR or \fB\(enD\fR flags just like
+\fIcpp\fR, except that the latter option ignores subsequent \fI#undefs\fR.
+It is not permitted to give values to symbols.
+Similarly, \fB\(enU\fR undefines a symbol and ignores subsequent 
+\fI#defines\fRs.
+Symbols defined with \fB\(enI\fR are ignored; any \fI#ifdef\fR using an
+ignored symbol will be left intact.
+
+
+

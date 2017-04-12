@@ -1,0 +1,15 @@
+.CD "mkdir \(en make a directory"
+.SX "mkdir [\fB\(enp\fR] [\fB\(enm \fImode\fR] \fIdirectory ..."
+.FL "\(enm" "Create directory with mode"
+.FL "\(enp" "Create missing intermediate directories"
+.EX "mkdir dir" "Create \fIdir\fP in the current directory"
+.EX "mkdir \(enp /user/ast/dir" "Create the \fI/user/ast\fP and \fI/user/ast/dir\fP"
+.PP
+The specified directory or directories are created and initialized. If any
+intermediate directory is missing and \fB\(enp\fR is specified, the missing
+component will be created and no error displayed if directory already
+exists. If the \fB\(enm\fR flag is used, this will be equivalent to a chmod
+on the directory after its creation.
+
+
+
