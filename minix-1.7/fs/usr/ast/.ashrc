@@ -1,0 +1,16 @@
+# Ash initialization.
+
+# Let cd display the current directory on the status line.
+if [ "$-" : '.*i.*' -a -t 0 -a -f /usr/bin/tget ] && tget -flag hs
+then
+	hostname=$(expr $(uname -n) : '\([^.]*\)')
+	eval "cd()
+	{
+		chdir \"\$@\" &&
+		echo -n '$(tget -str ts \
+				"$USER@$hostname:'\"\`pwd\`\"'" \
+				-str fs)'
+	}"
+	unset hostname
+	cd .
+fi
