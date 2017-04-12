@@ -5,11 +5,12 @@ sudo mount hd.img mnt -o loop,offset=512
 linkfile=/tmp/$$.linkfile
 trap "sudo umount mnt; rm -f $linkfile" EXIT
 
-rsync -av \
+sudo rsync -av \
     --hard-links \
     --delete \
     --whole-file \
     --no-specials \
+    --chown $(whoami):$(whoami) \
     --exclude 'dev' \
     --exclude 'etc/ttytab' \
     --exclude 'etc/mtab' \
