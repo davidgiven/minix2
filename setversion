@@ -1,2 +1,3 @@
 #!/bin/sh
+rm -f minix-current
 ln -sf $1 minix-current

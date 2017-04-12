@@ -1,0 +1,311 @@
+mkdir bin etc usr dev fd0 fd1 mnt root tmp
+
+mknod dev/PS0 b 0x2 0x1c
+mknod dev/PS1 b 0x2 0x1d
+mknod dev/at0 b 0x2 0x8
+mknod dev/at1 b 0x2 0x9
+mknod dev/cd0 b 0x8 0x0
+mknod dev/cd1 b 0x8 0x1
+mknod dev/cd1a b 0x8 0x80
+mknod dev/cd1b b 0x8 0x81
+mknod dev/cd1c b 0x8 0x82
+mknod dev/cd1d b 0x8 0x83
+mknod dev/cd2 b 0x8 0x2
+mknod dev/cd2a b 0x8 0x84
+mknod dev/cd2b b 0x8 0x85
+mknod dev/cd2c b 0x8 0x86
+mknod dev/cd2d b 0x8 0x87
+mknod dev/cd3 b 0x8 0x3
+mknod dev/cd3a b 0x8 0x88
+mknod dev/cd3b b 0x8 0x89
+mknod dev/cd3c b 0x8 0x8a
+mknod dev/cd3d b 0x8 0x8b
+mknod dev/cd4 b 0x8 0x4
+mknod dev/cd4a b 0x8 0x8c
+mknod dev/cd4b b 0x8 0x8d
+mknod dev/cd4c b 0x8 0x8e
+mknod dev/cd4d b 0x8 0x8f
+mknod dev/fd0 b 0x2 0x0
+mknod dev/fd0a b 0x2 0x70
+mknod dev/fd0b b 0x2 0x74
+mknod dev/fd0c b 0x2 0x78
+mknod dev/fd0d b 0x2 0x7c
+mknod dev/fd1 b 0x2 0x1
+mknod dev/fd1a b 0x2 0x71
+mknod dev/fd1b b 0x2 0x75
+mknod dev/fd1c b 0x2 0x79
+mknod dev/fd1d b 0x2 0x7d
+mknod dev/hd0 b 0x3 0x0
+mknod dev/hd1 b 0x3 0x1
+mknod dev/hd1a b 0x3 0x80
+mknod dev/hd1b b 0x3 0x81
+mknod dev/hd1c b 0x3 0x82
+mknod dev/hd1d b 0x3 0x83
+mknod dev/hd2 b 0x3 0x2
+mknod dev/hd2a b 0x3 0x84
+mknod dev/hd2b b 0x3 0x85
+mknod dev/hd2c b 0x3 0x86
+mknod dev/hd2d b 0x3 0x87
+mknod dev/hd3 b 0x3 0x3
+mknod dev/hd3a b 0x3 0x88
+mknod dev/hd3b b 0x3 0x89
+mknod dev/hd3c b 0x3 0x8a
+mknod dev/hd3d b 0x3 0x8b
+mknod dev/hd4 b 0x3 0x4
+mknod dev/hd4a b 0x3 0x8c
+mknod dev/hd4b b 0x3 0x8d
+mknod dev/hd4c b 0x3 0x8e
+mknod dev/hd4d b 0x3 0x8f
+mknod dev/hd5 b 0x3 0x5
+mknod dev/hd6 b 0x3 0x6
+mknod dev/hd6a b 0x3 0x90
+mknod dev/hd6b b 0x3 0x91
+mknod dev/hd6c b 0x3 0x92
+mknod dev/hd6d b 0x3 0x93
+mknod dev/hd7 b 0x3 0x7
+mknod dev/hd7a b 0x3 0x94
+mknod dev/hd7b b 0x3 0x95
+mknod dev/hd7c b 0x3 0x96
+mknod dev/hd7d b 0x3 0x97
+mknod dev/hd8 b 0x3 0x8
+mknod dev/hd8a b 0x3 0x98
+mknod dev/hd8b b 0x3 0x99
+mknod dev/hd8c b 0x3 0x9a
+mknod dev/hd8d b 0x3 0x9b
+mknod dev/hd9 b 0x3 0x9
+mknod dev/hd9a b 0x3 0x9c
+mknod dev/hd9b b 0x3 0x9d
+mknod dev/hd9c b 0x3 0x9e
+mknod dev/hd9d b 0x3 0x9f
+mknod dev/pat0 b 0x2 0x14
+mknod dev/pat1 b 0x2 0x15
+mknod dev/pc0 b 0x2 0x4
+mknod dev/pc1 b 0x2 0x5
+mknod dev/ps0 b 0x2 0x10
+mknod dev/ps1 b 0x2 0x11
+mknod dev/qd0 b 0x2 0xc
+mknod dev/qd1 b 0x2 0xd
+mknod dev/qh0 b 0x2 0x18
+mknod dev/qh1 b 0x2 0x19
+mknod dev/ram b 0x1 0x0
+mknod dev/sd0 b 0xa 0x0
+mknod dev/sd1 b 0xa 0x1
+mknod dev/sd1a b 0xa 0x80
+mknod dev/sd1b b 0xa 0x81
+mknod dev/sd1c b 0xa 0x82
+mknod dev/sd1d b 0xa 0x83
+mknod dev/sd2 b 0xa 0x2
+mknod dev/sd2a b 0xa 0x84
+mknod dev/sd2b b 0xa 0x85
+mknod dev/sd2c b 0xa 0x86
+mknod dev/sd2d b 0xa 0x87
+mknod dev/sd3 b 0xa 0x3
+mknod dev/sd3a b 0xa 0x88
+mknod dev/sd3b b 0xa 0x89
+mknod dev/sd3c b 0xa 0x8a
+mknod dev/sd3d b 0xa 0x8b
+mknod dev/sd4 b 0xa 0x4
+mknod dev/sd4a b 0xa 0x8c
+mknod dev/sd4b b 0xa 0x8d
+mknod dev/sd4c b 0xa 0x8e
+mknod dev/sd4d b 0xa 0x8f
+mknod dev/sd5 b 0xa 0x5
+mknod dev/sd6 b 0xa 0x6
+mknod dev/sd6a b 0xa 0x90
+mknod dev/sd6b b 0xa 0x91
+mknod dev/sd6c b 0xa 0x92
+mknod dev/sd6d b 0xa 0x93
+mknod dev/sd7 b 0xa 0x7
+mknod dev/sd7a b 0xa 0x94
+mknod dev/sd7b b 0xa 0x95
+mknod dev/sd7c b 0xa 0x96
+mknod dev/sd7d b 0xa 0x97
+mknod dev/sd8 b 0xa 0x8
+mknod dev/sd8a b 0xa 0x98
+mknod dev/sd8b b 0xa 0x99
+mknod dev/sd8c b 0xa 0x9a
+mknod dev/sd8d b 0xa 0x9b
+mknod dev/sd9 b 0xa 0x9
+mknod dev/sd9a b 0xa 0x9c
+mknod dev/sd9b b 0xa 0x9d
+mknod dev/sd9c b 0xa 0x9e
+mknod dev/sd9d b 0xa 0x9f
+mknod dev/console c 0x4 0x0
+mknod dev/eth c 0x7 0x1
+mknod dev/ip c 0x7 0x2
+mknod dev/kmem c 0x1 0x2
+mknod dev/log c 0x4 0xf
+mknod dev/lp c 0x6 0x0
+mknod dev/mem c 0x1 0x1
+mknod dev/nrst4 c 0xa 0x48
+mknod dev/null c 0x1 0x3
+mknod dev/ptyp0 c 0x4 0xc0
+mknod dev/ptyp1 c 0x4 0xc1
+mknod dev/ptyp2 c 0x4 0xc2
+mknod dev/ptyp3 c 0x4 0xc3
+mknod dev/rst4 c 0xa 0x49
+mknod dev/tcp c 0x7 0x3
+mknod dev/tty c 0x5 0x0
+mknod dev/tty00 c 0x4 0x10
+mknod dev/tty01 c 0x4 0x11
+mknod dev/ttyp0 c 0x4 0x80
+mknod dev/ttyp1 c 0x4 0x81
+mknod dev/ttyp2 c 0x4 0x82
+mknod dev/ttyp3 c 0x4 0x83
+mknod dev/udp c 0x7 0x4
+mknod dev/ttyc1 c 0x4 0x1
+
+chmod 666 dev/at0
+chmod 666 dev/at1
+chmod 600 dev/cd0
+chmod 600 dev/cd1
+chmod 600 dev/cd1a
+chmod 600 dev/cd1b
+chmod 600 dev/cd1c
+chmod 600 dev/cd1d
+chmod 600 dev/cd2
+chmod 600 dev/cd2a
+chmod 600 dev/cd2b
+chmod 600 dev/cd2c
+chmod 600 dev/cd2d
+chmod 600 dev/cd3
+chmod 600 dev/cd3a
+chmod 600 dev/cd3b
+chmod 600 dev/cd3c
+chmod 600 dev/cd3d
+chmod 600 dev/cd4
+chmod 600 dev/cd4a
+chmod 600 dev/cd4b
+chmod 600 dev/cd4c
+chmod 600 dev/cd4d
+chmod 620 dev/console
+chmod 600 dev/eth
+chmod 666 dev/fd0
+chmod 666 dev/fd0a
+chmod 666 dev/fd0b
+chmod 666 dev/fd0c
+chmod 666 dev/fd0d
+chmod 666 dev/fd1
+chmod 666 dev/fd1a
+chmod 666 dev/fd1b
+chmod 666 dev/fd1c
+chmod 666 dev/fd1d
+chmod 600 dev/hd0
+chmod 600 dev/hd1
+chmod 600 dev/hd1a
+chmod 600 dev/hd1b
+chmod 600 dev/hd1c
+chmod 600 dev/hd1d
+chmod 600 dev/hd2
+chmod 600 dev/hd2a
+chmod 600 dev/hd2b
+chmod 600 dev/hd2c
+chmod 600 dev/hd2d
+chmod 600 dev/hd3
+chmod 600 dev/hd3a
+chmod 600 dev/hd3b
+chmod 600 dev/hd3c
+chmod 600 dev/hd3d
+chmod 600 dev/hd4
+chmod 600 dev/hd4a
+chmod 600 dev/hd4b
+chmod 600 dev/hd4c
+chmod 600 dev/hd4d
+chmod 600 dev/hd5
+chmod 600 dev/hd6
+chmod 600 dev/hd6a
+chmod 600 dev/hd6b
+chmod 600 dev/hd6c
+chmod 600 dev/hd6d
+chmod 600 dev/hd7
+chmod 600 dev/hd7a
+chmod 600 dev/hd7b
+chmod 600 dev/hd7c
+chmod 600 dev/hd7d
+chmod 600 dev/hd8
+chmod 600 dev/hd8a
+chmod 600 dev/hd8b
+chmod 600 dev/hd8c
+chmod 600 dev/hd8d
+chmod 600 dev/hd9
+chmod 600 dev/hd9a
+chmod 600 dev/hd9b
+chmod 600 dev/hd9c
+chmod 600 dev/hd9d
+chmod 600 dev/ip
+chmod 640 dev/kmem
+chmod 222 dev/log
+chmod 200 dev/lp
+chmod 640 dev/mem
+chmod 660 dev/nrst4
+chmod 666 dev/null
+chmod 666 dev/pat0
+chmod 666 dev/pat1
+chmod 666 dev/pc0
+chmod 666 dev/pc1
+chmod 666 dev/ps0
+chmod 666 dev/PS0
+chmod 666 dev/ps1
+chmod 666 dev/PS1
+chmod 666 dev/ptyp0
+chmod 666 dev/ptyp1
+chmod 666 dev/ptyp2
+chmod 666 dev/ptyp3
+chmod 666 dev/qd0
+chmod 666 dev/qd1
+chmod 666 dev/qh0
+chmod 666 dev/qh1
+chmod 600 dev/ram
+chmod 660 dev/rst4
+chmod 600 dev/sd0
+chmod 600 dev/sd1
+chmod 600 dev/sd1a
+chmod 600 dev/sd1b
+chmod 600 dev/sd1c
+chmod 600 dev/sd1d
+chmod 600 dev/sd2
+chmod 600 dev/sd2a
+chmod 600 dev/sd2b
+chmod 600 dev/sd2c
+chmod 600 dev/sd2d
+chmod 600 dev/sd3
+chmod 600 dev/sd3a
+chmod 600 dev/sd3b
+chmod 600 dev/sd3c
+chmod 600 dev/sd3d
+chmod 600 dev/sd4
+chmod 600 dev/sd4a
+chmod 600 dev/sd4b
+chmod 600 dev/sd4c
+chmod 600 dev/sd4d
+chmod 600 dev/sd5
+chmod 600 dev/sd6
+chmod 600 dev/sd6a
+chmod 600 dev/sd6b
+chmod 600 dev/sd6c
+chmod 600 dev/sd6d
+chmod 600 dev/sd7
+chmod 600 dev/sd7a
+chmod 600 dev/sd7b
+chmod 600 dev/sd7c
+chmod 600 dev/sd7d
+chmod 600 dev/sd8
+chmod 600 dev/sd8a
+chmod 600 dev/sd8b
+chmod 600 dev/sd8c
+chmod 600 dev/sd8d
+chmod 600 dev/sd9
+chmod 600 dev/sd9a
+chmod 600 dev/sd9b
+chmod 600 dev/sd9c
+chmod 600 dev/sd9d
+chmod 666 dev/tcp
+chmod 666 dev/tty
+chmod 666 dev/tty00
+chmod 666 dev/tty01
+chmod 600 dev/ttyc1
+chmod 620 dev/ttyp0
+chmod 620 dev/ttyp1
+chmod 666 dev/ttyp2
+chmod 666 dev/ttyp3
+chmod 666 dev/udp

@@ -1,0 +1,42 @@
+# Describes the layout of the root floppy.
+
+copyfile .exrc
+copyfile .profile
+copyfile .rhosts
+copyfile bin/M
+ln bin/M bin/U
+copyfile bin/[
+copyfile bin/cat
+copyfile bin/date
+copyfile bin/echo
+copyfile bin/expr
+copyfile bin/false
+copyfile bin/fsck
+copyfile bin/halt
+copyfile bin/loadkeys
+copyfile bin/mount
+copyfile bin/printroot
+copyfile bin/pwd
+copyfile bin/readclock
+ln bin/halt bin/reboot
+copyfile bin/sh
+copyfile bin/sync
+ln bin/[ bin/test
+ln bin/false bin/true
+copyfile bin/umount
+copyfile etc/fstab
+copyfile etc/group
+copyfile etc/hostname.file
+copyfile etc/issue
+copyfile etc/motd
+copyfile etc/mtab
+copyfile etc/passwd
+copyfile etc/profile
+copyfile etc/protocols
+copyfile etc/rc
+copyfile etc/services
+copyfile etc/shadow
+copyfile etc/termcap
+copyfile etc/ttytab
+copyfile etc/utmp
+copyfile minix/1.7.5

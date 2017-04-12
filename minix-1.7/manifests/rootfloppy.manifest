@@ -1,0 +1,5 @@
+# Generates a root disk, with no usr. Will require you to mount /usr on
+# startup.
+
+include _core.manifest
+include _root.manifest

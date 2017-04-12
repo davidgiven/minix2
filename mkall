@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
 mkdir -p images
+
 ./mkmanifest -v minix-2.0 -t fd-1440kB.img.gz -o images/minix-2.0-combo-1440kB.img rootusrfloppy.manifest
 gzip -9f images/minix-2.0-combo-1440kB.img
 ./mkmanifest -v minix-2.0 -t fd-1200kB.img.gz -o images/minix-2.0-combo-1200kB.img rootusrfloppy.manifest
@@ -11,3 +12,14 @@ gzip -9f images/minix-2.0-root-720kB.img
 gzip -9f images/minix-2.0-usr-720kB.img
 ./mkmanifest -v minix-2.0 -t hd-64MB.img.gz -o images/minix-2.0-hd-64MB.img hd.manifest
 gzip -9f images/minix-2.0-hd-64MB.img
+
+./mkmanifest -v minix-1.7 -t fd-1440kB.img.gz -o images/minix-1.7-combo-1440kB.img rootusrfloppy.manifest
+gzip -9f images/minix-1.7-combo-1440kB.img
+./mkmanifest -v minix-1.7 -t fd-1200kB.img.gz -o images/minix-1.7-combo-1200kB.img rootusrfloppy.manifest
+gzip -9f images/minix-1.7-combo-1200kB.img
+./mkmanifest -v minix-1.7 -t fd-720kB.img.gz -o images/minix-1.7-root-720kB.img rootfloppy.manifest
+gzip -9f images/minix-1.7-root-720kB.img
+./mkmanifest -v minix-1.7 -t fd-720kB.img.gz -o images/minix-1.7-usr-720kB.img usrfloppy.manifest
+gzip -9f images/minix-1.7-usr-720kB.img
+./mkmanifest -v minix-1.7 -t hd-64MB.img.gz -o images/minix-1.7-hd-64MB.img hd.manifest
+gzip -9f images/minix-1.7-hd-64MB.img

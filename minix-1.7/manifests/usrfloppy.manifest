@@ -1,0 +1,7 @@
+# Generates a usr floppy, containing just /usr and nothing else. Not bootable.
+# Used with rootfloppy.
+
+rm boot
+include _usr.manifest
+mv usr/* .
+rmdir usr

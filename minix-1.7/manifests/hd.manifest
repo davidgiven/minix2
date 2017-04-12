@@ -1,0 +1,6 @@
+# Creates a hard drive image with everything in it. This isn't the same as the
+# build pack, as we boot into normal multiuser mode.
+
+include _core.manifest
+mkdir -p usr/tmp usr/preserve usr/spool/lpd usr/spool/at/past usr/run
+include _everything.manifest

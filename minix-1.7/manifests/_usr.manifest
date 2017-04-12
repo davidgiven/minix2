@@ -1,0 +1,61 @@
+copyfile usr/bin/arch
+copyfile usr/bin/badblocks
+copyfile usr/bin/basename
+copyfile usr/bin/chmod
+copyfile usr/bin/clone
+copyfile usr/bin/zcat
+ln usr/bin/zcat usr/bin/compress
+ln usr/bin/clone usr/bin/cp
+ln usr/bin/clone usr/bin/cpdir
+copyfile usr/bin/de
+copyfile usr/bin/df
+copyfile usr/bin/edparams
+copyfile usr/bin/getty
+copyfile usr/bin/grep
+copyfile usr/bin/installboot
+copyfile usr/bin/kill
+ln usr/bin/clone usr/bin/ln
+copyfile usr/bin/login
+copyfile usr/bin/ls
+copyfile usr/bin/MAKEDEV
+copyfile usr/bin/mined
+copyfile usr/bin/mkdir
+copyfile usr/bin/mkfs
+copyfile usr/bin/mknod
+ln usr/bin/clone usr/bin/mv
+copyfile usr/bin/od
+copyfile usr/bin/part
+copyfile usr/bin/partition
+copyfile usr/bin/readall
+copyfile usr/bin/readfs
+copyfile usr/bin/repartition
+ln usr/bin/clone usr/bin/rm
+copyfile usr/bin/rmdir
+copyfile usr/bin/sed
+copyfile usr/bin/setup
+copyfile usr/bin/shutdown
+copyfile usr/bin/sleep
+copyfile usr/bin/sort
+copyfile usr/bin/stty
+copyfile usr/bin/tar
+copyfile usr/bin/tee
+copyfile usr/bin/time
+ln usr/bin/arch usr/bin/uname
+ln usr/bin/zcat usr/bin/uncompress
+copyfile usr/bin/update
+copyfile usr/bin/vol
+copyfile usr/lib/keymaps/french.map
+copyfile usr/lib/keymaps/german.map
+copyfile usr/lib/keymaps/italian.map
+copyfile usr/lib/keymaps/japanese.map
+copyfile usr/lib/keymaps/latin-am.map
+copyfile usr/lib/keymaps/olivetti.map
+copyfile usr/lib/keymaps/spanish.map
+copyfile usr/lib/keymaps/uk.map
+copyfile usr/lib/keymaps/us-std.map
+copyfile usr/lib/keymaps/us-swap.map
+copyfile usr/lib/pwdauth
+copyfile usr/mdec/boot
+copyfile usr/mdec/bootblock
+copyfile usr/mdec/masterboot
+mkdir usr/tmp
