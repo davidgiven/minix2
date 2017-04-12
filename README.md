@@ -25,12 +25,14 @@ Minix. There are two:
 Minix 1 is the older version. You get: multiuser logins, all the standard Unix
 tools, a full Bourne shell, an ANSI C89 C compiler, a Modula-2 compiler, a vi
 clone, an emacs clone, a pico clone, source for nearly everything, awk, bc,
-games, and huge amounts of other stuff. It's (almost) completely
-self-hosted --- you can hack Minix on Minix.
+games, all the man pages, and huge amounts of other stuff. It's (almost)
+completely self-hosted --- you can hack Minix on Minix. The maximum supported
+amount of RAM is 16MB.
 
 Minix 2 gives you all of the above, plus: a better interactive shell, a
 richer API, TCP/IP networking, swap, and lots of other stuff I haven't
-discovered yet (there isn't a changelog).
+discovered yet (there isn't a changelog). The maximum supported amount of RAM
+is 64MB.
 
 Apart from being interesting simply as works of software art, they work so well
 they're actually useful on really old hardware; so, this distribution.
