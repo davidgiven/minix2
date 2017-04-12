@@ -1,7 +1,7 @@
 # Init script when running the build pack.
 
 echo "Running the build pack custom console. You are logged in as root."
-echo "Do ^D to shut down cleanly."
+echo "Do CTRL-ALT-DEL to shut down cleanly."
 echo ""
 login root
-shutdown -h now
+# does not return, bizarrely
