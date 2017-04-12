@@ -1,0 +1,4 @@
+# Copies EVERYTHING in the fs directory into the image.
+
+sudo rsync -aH --inplace --whole-file --chown=0:0 $ROOT/fs/. .
+sudo find . -type l -execdir sh -c 'ln -f "$(readlink -m "$0")" "$0"' {} \;

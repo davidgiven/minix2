@@ -133,13 +133,14 @@ To make the hard drive bootable:
 
 ## Hacking it
 
-If you just want to fiddle with it, or do builds, then this command:
+If you just want to fiddle with it, or do builds, then do this:
 
+    $ ./setversion minix-2.0
     $ ./pack
 
-...will create an `hd.img` file, similar to the `hd-64MB.img.gz` one above,
-It's also lightly massaged for use as a build box, so when it boots it'll
-take you straight to a shell, etc. This then allows you to then do:
+...and it will create an `hd.img` file, similar to the `hd-64MB.img.gz` one
+above. It's also lightly massaged for use as a build box, so when it boots
+it'll take you straight to a shell, etc. This then allows you to then do:
 
     $ ./runqemu
 
@@ -152,7 +153,8 @@ tell qemu to shut down!) and then you can do:
     $ ./unpack
 
 ...and your changes will be copied out of the image into the `fs` directory
-where you and the VCS can see them.
+where you and the VCS can see them. (If you unpack from the wrong version,
+weird things will happen. Don't do that.)
 
 
 ## References

@@ -17,7 +17,7 @@ rsync -av \
     --exclude 'usr/adm' \
     --exclude 'boot' \
     mnt/ \
-    fs/ \
+    minix-current/fs/ \
     > $linkfile
 
-awk '/ => / { print "ln -sfr ./" $3 " " $1 }' $linkfile | (cd fs && sh)
+awk '/ => / { print "ln -sfr ./" $3 " " $1 }' $linkfile | (cd minix-current/fs && sh)

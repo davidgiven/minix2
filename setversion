@@ -1,0 +1,2 @@
+#!/bin/sh
+ln -sf $1 minix-current

@@ -2,16 +2,18 @@
 
 set -e
 
-options=$(getopt -s sh -n $0 t:o: "$@")
+options=$(getopt -s sh -n $0 v:t:o: "$@")
 if [ $? -ne 0 ]; then
-    echo >&2 "Usage: $0 [-t template] [-o output] manifests..."
+    echo >&2 "Usage: $0 [-v version] [-t template] [-o output] manifests..."
 	exit 1
 fi
 
+version=
 template=
 output=output.img
 for option in $options; do
     case "$option" in
+        -v) shift; version=$1; shift;;
         -t) shift; template=$1; shift;;
         -o) shift; output=$1; shift;;
         --) break;;
@@ -19,27 +21,35 @@ for option in $options; do
 done
 manifests="$@"
 
+if [ "$version" = "" ]; then
+    echo >&2 "$0: you must specify a version (try '2.0.4')"
+    exit 1
+fi
 if [ "$template" = "" ]; then
-    echo >&2 "$0: you have to supply a template file (look in 'images')"
+    echo >&2 "$0: you have to supply a template file (try something in '2.0.4/templates')"
     exit 1
 fi
 if [ "$manifests" = "" ]; then
-    echo >&2 "$0: you have to supply at least one manifest (look in 'manifests')"
+    echo >&2 "$0: you have to supply at least one manifest (try something in '2.0.4/manifests')"
     exit 1
 fi
 
+ROOT=$PWD/$version
+
+echo "Version:       $version"
 echo "Template file: $template"
 echo "Output image:  $output"
 echo "Manifests:     $manifests"
 
+
 mnt=mnt
 mkdir -p $mnt
-zcat $template > $output
+zcat $ROOT/templates/$template > $output
 sudo mount $output $mnt -o loop 2>/dev/null || sudo mount $output $mnt -o loop,offset=512
 trap "sudo umount $mnt" EXIT
 
 for mf in $manifests; do
     echo "Running manifest $mf"
 
-    (cd $mnt && sudo sh -c "set -e && . ../mkmanifest.sh && . ../$mf")
+    (cd $mnt && sudo sh -c "set -e && . ../mkmanifest.sh && ROOT=$ROOT && . $ROOT/manifests/$mf")
 done
