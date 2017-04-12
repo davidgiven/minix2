@@ -1,31 +1,39 @@
-# Minix 2 QD edition
+# Minix QD
 
 ## Introduction
 
-This is a very quick-and-dirty distribution of the old Minix 2 operating
-system by Andrew Tanenbaum. It's not official in any way.
+This is a very quick-and-dirty distribution of the old Minix 1 and 2 operating
+systems by Andrew Tanenbaum. It's not official in any way.
 
 
-### What is Minix 2?
+### What is Minix QD?
 
-Minix 2 is a pedagogical operating system designed for teaching an OS
-course, developed around 1996. Despite being restricted in scope and
-suitable for understanding by students, it's actually a surprisingly
-powerful and thoroughly usable Unix clone which will run in tiny amounts of
-RAM. The entire distribution, source code and C compiler included, will fit
-in about 40MB of disk and it'll recompile its own kernel and userspace in
-1MB of RAM. (Slowly.) It'll run entirely off floppy disk. It'll even boot on
-an original IBM PC, with the 512MB upgrade, although even Minix has trouble
-there.
+Minix is a pedagogical operating system designed for teaching an OS course,
+first developed in the 1990s. Despite being restricted in scope and suitable
+for understanding by students, it's actually a surprisingly powerful and
+thoroughly usable Unix clone; older versions will run in tiny amounts of RAM.
+Their entire distribution, source code and C compiler included, will fit in
+about 40MB of disk and it'll recompile its own kernel and userspace in 1MB of
+RAM. (Slowly.) They'll run entirely off floppy disk. They'll even boot on an
+original IBM PC with 512kB of RAM, although they're a bit cramped.
 
-What you get is: multiuser logins, all the standard Unix tools, a full
-Bourne shell, an ANSI C89 C compiler, a Modula-2 compiler, TCP/IP
-networking, a vi clone, an emacs clone, a pico clone, source for nearly
-everything, awk, bc, a game, and huge amounts of other stuff. It's (almost)
-completely self-hosted --- you can hack Minix on Minix.
+There are three versions. The current one is Minix 3, which is [still under active development](http://www.minix3.org); look there if you're interested.
 
-This makes it both interesting simply as a work of art, but also quite
-useful when retrocomputing.
+Minix QD is my quick-and-dirty distribution of the old, obsolete versions of
+Minix. There are two:
+
+Minix 1 is the older version. You get: multiuser logins, all the standard Unix
+tools, a full Bourne shell, an ANSI C89 C compiler, a Modula-2 compiler, a vi
+clone, an emacs clone, a pico clone, source for nearly everything, awk, bc,
+games, and huge amounts of other stuff. It's (almost) completely
+self-hosted --- you can hack Minix on Minix.
+
+Minix 2 gives you all of the above, plus: a better interactive shell, a
+richer API, TCP/IP networking, swap, and lots of other stuff I haven't
+discovered yet (there isn't a changelog).
+
+Apart from being interesting simply as works of software art, they work so well
+they're actually useful on really old hardware; so, this distribution.
 
 
 ## I don't care about instructions, I just want something I can run!
@@ -37,11 +45,11 @@ appropriate media; then boot it in something.
 
 ## What's here?
 
-What you will find here is the contents of the last Minix 2 release, 2.0.4,
-extracted and massaged so that it'll live in a standard user directory, plus
-a set of scripts that will take the distribution and turn it into a bootable
-Minix hard drive image. Minix is self-hosting, so we need to bootstrap a
-Minix somehow to build it on.
+What you will find here is the contents of the last Minix 1 and 2 releases,
+1.7.5 and 2.0.4, extracted and massaged so that they'll live in a standard user
+directory, plus a set of scripts that will take the distributions and turn it
+into a bootable Minix hard drive images. Minix is self-hosting, so we need to
+bootstrap a Minix somehow to build it on.
 
 You won't find *all* the source here, because Minix came with most source,
 but not all; the C compiler is ACKPACK, a special version of the [Amsterdam
@@ -64,9 +72,9 @@ Do:
 
     $ ./mkall
 
-This will rebuild all the installation images from the files in `fs`.
-(Alternatively, you can download these from the
-[release page](https://github.com/davidgiven/minix2/releases/latest).)
+This will rebuild all the installation images from the files in `fs` for both
+versions.  (Alternatively, you can download these from the [release
+page](https://github.com/davidgiven/minix2/releases/latest).)
 
   * `combo-1440kB.img.gz`, `combo-1200kB.img.gz`: combined root/usr floppy
     disk images. These contain a single filesystem with no division into root
@@ -91,8 +99,8 @@ This will rebuild all the installation images from the files in `fs`.
 Once you have a floppy based system booted, you want to copy Minix onto your
 computer's hard drive.
 
-The detailed instructions are long and complicated, but the tl;dr version is
-to log in as root, and then:
+The detailed instructions are long and complicated, but the tl;dr version for
+Minix 2 is to log in as root, and then:
 
     $ part
 
@@ -105,7 +113,7 @@ as you want.
 
 To mount the swap:
 
-    # mkswap /dev/c0d0p0
+    # mkswap /dev/c0d0p0  # controller 0, drive 0, partition 0
     # mount -s /dev/c0d0p0
 
 To create the filesystem and copy all the data:
@@ -130,12 +138,19 @@ To make the hard drive bootable:
 
 ...then reboot. Hopefully your new system will boot.
 
+Installing Minix 1 is exactly the same, except:
+
+  * there's no swap, so ignore that bit
+
+  * devices are named differently; `/dev/c0d0` => `/dev/hd0`; `/dev/c0d0p0` =>
+	`/dev/hd1`; `/dev/c0d0p3` => `/dev/hd4`; `/dev/c0d1` => `/dev/hd5`; etc.
+
 
 ## Hacking it
 
 If you just want to fiddle with it, or do builds, then do this:
 
-    $ ./setversion minix-2.0
+    $ ./setversion minix-2.0  # or minix-1.7
     $ ./pack
 
 ...and it will create an `hd.img` file, similar to the `hd-64MB.img.gz` one
@@ -159,9 +174,12 @@ weird things will happen. Don't do that.)
 
 ## References
 
-  * [The 'official' Minix 2 distribution
-    page](https://minix1.woodhull.com/) (it's been
-    abandoned for years).
+  * [The official upstream
+	source](http://wiki.minix3.org/doku.php?id=www:download:previousversions)
+	with downloads of all versions of Minix, including these
+
+  * [The old 'official' Minix 2 distribution
+	page](https://minix1.woodhull.com/) (it's been abandoned for years).
 
   * [The Design and Implementation of Operating Systems (second
     edition)](https://www.amazon.co.uk/Operating-Systems-Implementation-Tanenbaum-1997-01-15/dp/B019NDOVWC/ref=sr_1_1)
@@ -175,5 +193,5 @@ weird things will happen. Don't do that.)
 
 ## License
 
-Minix 2, and all my scripts, are BSD 3-clause. See the
+Minix 1 and 2, and all my scripts, are BSD 3-clause. See the
 [LICENSE](LICENSE.md).
