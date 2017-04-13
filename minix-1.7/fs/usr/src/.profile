@@ -7,7 +7,7 @@ PS1="! "
 export PATH
 
 # Erase character, erase line, and interrupt keys.
-stty erase '^H' kill '^U' intr '^?'
+stty erase '^H' kill '^U' intr '^C'
 
 # Check terminal type.
 case $TERM in
