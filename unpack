@@ -10,7 +10,7 @@ sudo rsync -av \
     --delete \
     --whole-file \
     --no-specials \
-    --chown $(whoami):$(whoami) \
+    --chown $(whoami) \
     --exclude 'dev' \
     --exclude 'etc/ttytab' \
     --exclude 'etc/mtab' \
